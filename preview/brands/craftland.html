@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craftland — Made by hands. Made to last.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+TC:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #5D4037;
+            --color-primary-dark: #4A3028;
+            --color-accent: #A1887F;
+            --color-bg: #F5EFE6;
+            --color-bg-alt: #EDE4D3;
+            --color-bg-white: #FDFBF7;
+            --color-text: #3E2723;
+            --color-text-light: #7B6B63;
+            --color-text-muted: #A89888;
+            --color-border: #DDD4C6;
+            --color-white: #FFFFFF;
+            --color-footer-bg: #2E221C;
+            --font-heading: 'Lora', serif;
+            --font-body: 'Noto Serif TC', serif;
+            --font-body-en: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+            --radius: 6px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.9; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+        .nav-logo { font-family: var(--font-heading); font-size: 24px; font-weight: 600; color: var(--color-primary); letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+        .nav-links a { font-family: var(--font-body-en); font-size: 13px; color: var(--color-text-light); letter-spacing: 0.5px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-cta { background: var(--color-primary); color: var(--color-white) !important; padding: 10px 24px; border-radius: var(--radius); }
+        .nav-cta:hover { background: var(--color-primary-dark); }
+
+        /* HERO */
+        .hero { padding: 160px 0 120px; background: var(--color-bg); text-align: center; }
+        .hero-label { font-family: var(--font-body-en); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 24px; }
+        .hero-tagline { font-family: var(--font-heading); font-size: clamp(36px, 5vw, 52px); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin-bottom: 20px; font-style: italic; }
+        .hero-sub { font-size: 18px; color: var(--color-text-light); margin-bottom: 16px; }
+        .hero-desc { font-size: 15px; color: var(--color-text-light); line-height: 2; margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
+        .hero-btn { display: inline-block; padding: 14px 36px; background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); font-family: var(--font-body-en); font-size: 14px; letter-spacing: 1px; transition: var(--transition); }
+        .hero-btn:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+        .hero-divider { width: 60px; height: 2px; background: var(--color-accent); margin: 48px auto 0; }
+
+        /* ABOUT */
+        .about { padding: 100px 0; background: var(--color-bg-white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+        .about-visual { aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; }
+        .about-visual img { width: 100%; height: 100%; object-fit: cover; }
+        .about-label { font-family: var(--font-body-en); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; }
+        .about h2 { font-family: var(--font-heading); font-size: clamp(26px, 4vw, 36px); font-weight: 600; color: var(--color-primary); margin-bottom: 24px; }
+        .about p { font-size: 16px; line-height: 2.2; color: var(--color-text); margin-bottom: 20px; }
+
+        /* PRODUCTS */
+        .products { padding: 100px 0; background: var(--color-bg); }
+        .products-header { text-align: center; margin-bottom: 56px; }
+        .products-header h2 { font-family: var(--font-heading); font-size: clamp(26px, 4vw, 36px); font-weight: 600; color: var(--color-primary); margin-bottom: 8px; }
+        .products-header p { font-size: 15px; color: var(--color-text-light); font-style: italic; }
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .product-card { background: var(--color-bg-white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(93,64,55,0.1); }
+        .product-img { height: 240px; overflow: hidden; background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 28px; }
+        .product-info h3 { font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--color-primary); margin-bottom: 8px; }
+        .product-info p { font-size: 14px; color: var(--color-text-light); line-height: 1.8; }
+
+        /* FOOTER */
+        .footer { background: var(--color-footer-bg); color: var(--color-white); padding: 48px 0 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+        .footer-text { font-size: 13px; opacity: 0.5; line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: var(--transition); }
+        .footer-links a:hover { color: var(--color-accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 12px; opacity: 0.35; line-height: 2; }
+        .precraft-badge { display: inline-block; margin-top: 16px; padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius); font-size: 12px; opacity: 0.6; }
+        .precraft-badge a { color: var(--color-accent); }
+
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-visual { max-width: 400px; margin: 0 auto; order: -1; }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 120px 0 80px; }
+            .products-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+            .about, .products { padding: 72px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Craftland</a>
+            <ul class="nav-links">
+                <li><a href="#">作品</a></li>
+                <li><a href="#">關於工坊</a></li>
+                <li><a href="#">訂製服務</a></li>
+                <li><a href="#" class="nav-cta">預約參觀</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <p class="hero-label">Handcrafted in Taiwan</p>
+        <h1 class="hero-tagline">Made by hands.<br>Made to last.</h1>
+        <p class="hero-sub">來自台灣職人的手作工藝</p>
+        <p class="hero-desc">每一件作品都有它的時間。從選材到拋光，都是師傅的雙手與數十個小時的交換。Craftland 相信，好的東西不需要很多，但每一件都應該陪你很久。</p>
+        <a href="#" class="hero-btn">Browse Collection</a>
+        <div class="hero-divider"></div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual">
+                <img src="assets/craftland/about-workshop.png" alt="Craftland 木工工坊：陽光灑入的工作檯與手工具" loading="lazy">
+            </div>
+            <div>
+                <p class="about-label">Our Workshop</p>
+                <h2>三代木工家族的新篇章</h2>
+                <p>Craftland 的工坊座落在台南老街的一棟日治時期建築裡。這裡原本是阿公的木工廠，做了四十年的門窗和家具。十年前差點收掉，直到第三代的阿誠決定接手。</p>
+                <p>阿誠不想只做傳統家具。他把阿公的木工技術與現代設計結合，開始做小件的生活器物——餐具、文具、茶道具。每一件都保留傳統榫卯工法，但造型簡潔俐落。</p>
+                <p>我們相信手工不是落伍，是對品質的堅持。機器可以做得更快，但師傅的手可以感受木頭的紋理、皮革的厚薄、陶土的濕度。這些感受，是機器永遠學不會的。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-header">
+            <h2>手作選物</h2>
+            <p>每一件都經過數十個小時的製作</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="assets/craftland/product-utensils.png" alt="手工木質餐具組" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>手工木質餐具組</h3>
+                    <p>台灣在地相思木製作，食品級天然木蠟油塗裝。含木匙、木筷、木盤各一，手感溫潤，越用越有光澤。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/craftland/product-furniture.png" alt="訂製木質傢俱榫卯細節" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>訂製木質傢俱</h3>
+                    <p>從討論需求到完工約需 8-12 週。使用傳統榫卯工法，不使用螺絲釘，結構穩固可傳世。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/craftland/product-notebook.png" alt="皮革手作筆記本" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>皮革手作筆記本</h3>
+                    <p>義大利植鞣牛皮封面，日本巴川紙內頁。皮革會隨使用產生獨特色澤，成為你專屬的樣子。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/craftland/product-teaware.png" alt="陶藝茶具組" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>陶藝茶具組</h3>
+                    <p>台南在地陶藝師手拉胚製作，含茶壺一把、品茗杯四只。柴燒窯燒製，每件都是獨一無二的。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">Craftland</div>
+                <p class="footer-text">台南 · 手作工藝坊<br>hello@craftland.tw</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">作品</a></li>
+                <li><a href="#">關於工坊</a></li>
+                <li><a href="#">訂製服務</a></li>
+                <li><a href="#">工作坊體驗</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>此為 Precraft 風格展示用虛擬品牌 &middot; A demo brand by Precraft 緻作</p>
+            <div class="precraft-badge"><a href="../../index.html">查看 Precraft 緻作 &rarr;</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

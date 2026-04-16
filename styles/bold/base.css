@@ -1,0 +1,100 @@
+/* =============================================
+   bold — Base styles
+   Reset + typography + shared components
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--bold-font-body);
+  font-size: var(--bold-font-body-size);
+  color: var(--bold-text);
+  line-height: var(--bold-lh-base);
+  background: var(--bold-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--bold-font-heading);
+  font-weight: var(--bold-weight-bold);
+  line-height: var(--bold-lh-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--bold-letter-tight);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Container */
+.b-container {
+  max-width: var(--bold-container);
+  margin: 0 auto;
+  padding: 0 var(--bold-pad);
+}
+
+/* Section label */
+.b-label {
+  font-family: var(--bold-font-heading);
+  font-size: var(--bold-font-xs);
+  font-weight: var(--bold-weight-bold);
+  letter-spacing: var(--bold-letter-wide);
+  text-transform: uppercase;
+  color: var(--bold-accent);
+  margin-bottom: var(--bold-space-2);
+}
+
+/* Buttons */
+.b-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--bold-font-heading);
+  font-size: var(--bold-font-small);
+  font-weight: var(--bold-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--bold-radius);
+  transition: var(--bold-transition);
+  cursor: pointer;
+  border: var(--bold-border-width) solid transparent;
+}
+
+.b-btn-primary {
+  background: var(--bold-primary);
+  color: var(--bold-white);
+  border-color: var(--bold-primary);
+}
+.b-btn-primary:hover {
+  background: var(--bold-accent);
+  border-color: var(--bold-accent);
+  transform: translateY(-2px);
+}
+
+.b-btn-outline {
+  background: transparent;
+  color: var(--bold-text);
+  border: var(--bold-border-width) solid var(--bold-primary);
+}
+.b-btn-outline:hover {
+  background: var(--bold-primary);
+  color: var(--bold-white);
+}
+
+.b-btn-accent {
+  background: var(--bold-accent);
+  color: var(--bold-white);
+  border-color: var(--bold-accent);
+}
+.b-btn-accent:hover {
+  background: var(--bold-accent-hover);
+  border-color: var(--bold-accent-hover);
+}

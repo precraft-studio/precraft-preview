@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawCare — Every tail deserves a home.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #E08D4F;
+            --color-primary-dark: #C47A3D;
+            --color-accent: #F4C79F;
+            --color-bg: #FDF6ED;
+            --color-bg-alt: #FFF0E0;
+            --color-bg-white: #FFFFFF;
+            --color-text: #4A3628;
+            --color-text-light: #8B7565;
+            --color-text-muted: #B5A08A;
+            --color-border: #F0E4D4;
+            --color-white: #FFFFFF;
+            --color-footer-bg: #3D2B1F;
+            --font-heading: 'Nunito', sans-serif;
+            --font-body: 'Noto Sans TC', sans-serif;
+            --transition: all 0.3s ease;
+            --radius: 16px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.8; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .nav-logo { font-family: var(--font-heading); font-size: 26px; font-weight: 800; color: var(--color-primary); }
+        .nav-logo span { font-size: 20px; }
+        .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+        .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-light); transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-cta { background: var(--color-primary); color: var(--color-white) !important; padding: 10px 24px; border-radius: 24px; font-weight: 600 !important; }
+        .nav-cta:hover { background: var(--color-primary-dark); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; background: var(--color-bg); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-tagline { font-family: var(--font-heading); font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.2; margin-bottom: 16px; }
+        .hero-tagline em { color: var(--color-primary); font-style: normal; }
+        .hero-sub { font-size: 18px; color: var(--color-text-light); margin-bottom: 12px; font-weight: 500; }
+        .hero-desc { font-size: 15px; color: var(--color-text-light); line-height: 1.9; margin-bottom: 32px; }
+        .hero-btn { display: inline-block; padding: 16px 40px; background: var(--color-primary); color: var(--color-white); border-radius: 28px; font-size: 16px; font-weight: 600; transition: var(--transition); }
+        .hero-btn:hover { background: var(--color-primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,141,79,0.3); }
+        .hero-visual { aspect-ratio: 1; border-radius: 50%; overflow: hidden; max-width: 400px; }
+        .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ABOUT */
+        .about { padding: 100px 0; background: var(--color-bg-white); }
+        .about-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+        .about-label { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--color-primary); margin-bottom: 16px; }
+        .about h2 { font-family: var(--font-heading); font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--color-text); margin-bottom: 28px; }
+        .about p { font-size: 16px; line-height: 2; color: var(--color-text); margin-bottom: 20px; }
+
+        /* PRODUCTS */
+        .products { padding: 100px 0; background: var(--color-bg); }
+        .products-header { text-align: center; margin-bottom: 56px; }
+        .products-header h2 { font-family: var(--font-heading); font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--color-text); margin-bottom: 8px; }
+        .products-header p { font-size: 15px; color: var(--color-text-light); }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: var(--color-bg-white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); text-align: center; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(224,141,79,0.12); }
+        .product-img { height: 200px; overflow: hidden; background: var(--color-bg-alt); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-family: var(--font-heading); font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 6px; }
+        .product-info p { font-size: 13px; color: var(--color-text-light); line-height: 1.6; }
+
+        /* FOOTER */
+        .footer { background: var(--color-footer-bg); color: var(--color-white); padding: 48px 0 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-heading); font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .footer-text { font-size: 13px; opacity: 0.5; line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: var(--transition); }
+        .footer-links a:hover { color: var(--color-primary); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 12px; opacity: 0.35; line-height: 2; }
+        .precraft-badge { display: inline-block; margin-top: 16px; padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; font-size: 12px; opacity: 0.6; }
+        .precraft-badge a { color: var(--color-primary); }
+
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-visual { max-width: 280px; margin: 0 auto; order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: auto; padding: 120px 0 72px; }
+            .products-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+            .about, .products { padding: 72px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">PawCare <span>🐾</span></a>
+            <ul class="nav-links">
+                <li><a href="#">產品</a></li>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">獸醫專欄</a></li>
+                <li><a href="#" class="nav-cta">立即選購</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <p class="hero-sub">用家人的方式，陪伴每一隻毛孩</p>
+                <h1 class="hero-tagline">Every <em>tail</em><br>deserves a home.</h1>
+                <p class="hero-desc">PawCare 由獸醫師與三隻米克斯共同「創立」。從日常餵食到健康照護，我們為每一個毛孩家庭提供用心的選擇。</p>
+                <a href="#" class="hero-btn">探索全系列產品</a>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/pawcare/hero-main.png" alt="PawCare 品牌視覺：溫暖的寵物居家場景">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-inner">
+            <p class="about-label">我們的故事</p>
+            <h2>三隻米克斯教會我們的事</h2>
+            <p>PawCare 的創辦人是一位在動物醫院工作了八年的獸醫師。每天他看到飼主們帶著各種擔憂走進診間——毛孩不吃飯、皮膚過敏、關節不舒服。他發現，很多問題其實可以在日常照護中被預防。</p>
+            <p>於是他帶著家裡的三隻米克斯——阿肥、小花和黑皮——開始研發適合台灣氣候與飼養環境的日常保健產品。從挑食的狗狗到敏感的貓咪，每一款產品都在自家毛孩身上先試用過。</p>
+            <p>我們相信，寵物照護不該是焦慮的事。好的產品應該讓飼主安心、讓毛孩開心。這就是 PawCare 存在的原因。</p>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-header">
+            <h2>為毛孩的每一天</h2>
+            <p>從吃到洗，從幼犬到老犬，我們都想到了</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="assets/pawcare/product-food.png" alt="鮮食調理包食材" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>鮮食調理包</h3>
+                    <p>人用等級食材，獸醫師配方。挑食毛孩也買單。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/pawcare/product-shampoo.png" alt="護毛洗毛精" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>護毛洗毛精</h3>
+                    <p>低敏配方，洗完蓬鬆不乾澀。適合敏感肌毛孩。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/pawcare/product-joint.png" alt="關節保健錠" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>關節保健錠</h3>
+                    <p>為中大型犬與年長毛孩設計，有助於維持靈活度。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/pawcare/product-probiotic.png" alt="日常保健乳酸菌" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>日常保健乳酸菌</h3>
+                    <p>腸胃敏感毛孩的日常好夥伴，粉狀好拌入飼料。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">PawCare 🐾</div>
+                <p class="footer-text">用家人的方式，陪伴每一隻毛孩<br>service@pawcare.tw</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">產品系列</a></li>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">獸醫專欄</a></li>
+                <li><a href="#">聯絡我們</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>此為 Precraft 風格展示用虛擬品牌 &middot; A demo brand by Precraft 緻作</p>
+            <div class="precraft-badge"><a href="../../index.html">查看 Precraft 緻作 &rarr;</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

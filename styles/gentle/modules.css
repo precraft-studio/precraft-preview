@@ -1,0 +1,494 @@
+/* =============================================
+   gentle — Module style overrides
+   All classes use g- prefix
+
+   設計核心：
+   子女瀏覽時感受到「這裡會好好照顧我的父母」。
+   不是醫院的冰冷白，不是商業的推銷感，
+   是祖母家的午後——溫暖、安心、從容。
+   ============================================= */
+
+/* ===== 1. HEADER ===== */
+.g-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--gentle-bg);
+  border-bottom: 1px solid var(--gentle-border-light);
+}
+
+.g-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.g-logo {
+  font-family: var(--gentle-font-heading);
+  font-size: 22px;
+  font-weight: var(--gentle-weight-medium);
+  color: var(--gentle-primary);
+}
+
+.g-nav {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  align-items: center;
+}
+
+.g-nav a {
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-small);
+  color: var(--gentle-text-secondary);
+  transition: var(--gentle-transition);
+}
+.g-nav a:hover { color: var(--gentle-primary); }
+
+.g-nav-cta {
+  background: var(--gentle-primary);
+  color: var(--gentle-white) !important;
+  padding: 10px 24px;
+  border-radius: var(--gentle-radius-md);
+  font-weight: var(--gentle-weight-medium) !important;
+}
+.g-nav-cta:hover { background: var(--gentle-primary-hover); }
+
+.g-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.g-menu-toggle span {
+  width: 22px;
+  height: 1.5px;
+  background: var(--gentle-primary);
+  border-radius: 1px;
+}
+
+
+/* ===== 2. HERO ===== */
+.g-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--gentle-space-10);
+  background: var(--gentle-bg);
+}
+
+.g-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gentle-space-10);
+  align-items: center;
+}
+
+.g-hero h1 {
+  font-size: var(--gentle-font-h1);
+  color: var(--gentle-text);
+  margin-bottom: var(--gentle-space-3);
+  font-weight: var(--gentle-weight-medium);
+}
+
+.g-hero-sub {
+  font-size: var(--gentle-font-body-lg);
+  color: var(--gentle-text-secondary);
+  line-height: var(--gentle-lh-relaxed);
+  margin-bottom: var(--gentle-space-6);
+}
+
+.g-hero-actions {
+  display: flex;
+  gap: var(--gentle-space-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.g-hero-visual {
+  aspect-ratio: 4/5;
+  border-radius: var(--gentle-radius-lg);
+  overflow: hidden;
+  background: var(--gentle-bg-alt);
+}
+.g-hero-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+
+/* ===== 3. FEATURES ===== */
+.g-features {
+  padding: var(--gentle-section) 0;
+  background: var(--gentle-bg-white);
+}
+
+.g-features-header {
+  margin-bottom: var(--gentle-space-8);
+}
+
+.g-features-header h2 {
+  font-size: var(--gentle-font-h2);
+  color: var(--gentle-text);
+  margin-bottom: var(--gentle-space-1);
+}
+
+.g-features-header p {
+  font-size: var(--gentle-font-body-size);
+  color: var(--gentle-text-secondary);
+}
+
+.g-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gentle-space-4);
+}
+
+.g-feature-card {
+  padding: var(--gentle-space-5);
+  background: var(--gentle-bg-card);
+  border-radius: var(--gentle-radius-md);
+  transition: var(--gentle-transition);
+}
+.g-feature-card:hover {
+  box-shadow: var(--gentle-shadow-hover);
+}
+
+.g-feature-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gentle-primary);
+  border-radius: var(--gentle-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gentle-white);
+  font-size: 20px;
+  margin-bottom: var(--gentle-space-3);
+  opacity: 0.85;
+}
+
+.g-feature-card h3 {
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-body-size);
+  font-weight: var(--gentle-weight-medium);
+  color: var(--gentle-text);
+  margin-bottom: var(--gentle-space-1);
+}
+
+.g-feature-card p {
+  font-size: var(--gentle-font-small);
+  color: var(--gentle-text-secondary);
+  line-height: var(--gentle-lh-relaxed);
+}
+
+
+/* ===== 4. ABOUT ===== */
+.g-about {
+  padding: var(--gentle-section) 0;
+  background: var(--gentle-bg);
+}
+
+.g-about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--gentle-space-10);
+  align-items: start;
+}
+
+.g-about h2 {
+  font-size: var(--gentle-font-h2);
+  color: var(--gentle-text);
+  margin-bottom: var(--gentle-space-4);
+  font-weight: var(--gentle-weight-medium);
+}
+
+.g-about p {
+  font-size: var(--gentle-font-body-size);
+  color: var(--gentle-text-secondary);
+  line-height: var(--gentle-lh-relaxed);
+  margin-bottom: var(--gentle-space-3);
+}
+
+.g-about-highlight {
+  font-family: var(--gentle-font-heading);
+  font-size: var(--gentle-font-body-lg);
+  font-weight: var(--gentle-weight-normal);
+  font-style: italic;
+  color: var(--gentle-primary);
+  border-left: 3px solid var(--gentle-accent-soft);
+  padding-left: var(--gentle-space-3);
+  margin: var(--gentle-space-6) 0;
+  line-height: 1.7;
+}
+
+.g-about-visual {
+  aspect-ratio: 4/5;
+  border-radius: var(--gentle-radius-lg);
+  overflow: hidden;
+  background: var(--gentle-bg-alt);
+}
+.g-about-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+
+/* ===== 5. PRODUCTS (services in care context) ===== */
+.g-products {
+  padding: var(--gentle-section) 0;
+  background: var(--gentle-bg-white);
+}
+
+.g-products-header {
+  margin-bottom: var(--gentle-space-8);
+}
+
+.g-products-header h2 {
+  font-size: var(--gentle-font-h2);
+  color: var(--gentle-text);
+  margin-bottom: var(--gentle-space-1);
+}
+
+.g-products-header p {
+  font-size: var(--gentle-font-body-size);
+  color: var(--gentle-text-secondary);
+}
+
+.g-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gentle-space-3);
+}
+
+.g-product-card {
+  background: var(--gentle-bg-card);
+  border-radius: var(--gentle-radius-md);
+  overflow: hidden;
+  transition: var(--gentle-transition);
+}
+.g-product-card:hover {
+  box-shadow: var(--gentle-shadow-hover);
+}
+
+.g-product-img {
+  height: 200px;
+  overflow: hidden;
+  background: var(--gentle-bg-alt);
+}
+.g-product-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.g-product-info {
+  padding: var(--gentle-space-3) var(--gentle-space-3) var(--gentle-space-4);
+}
+
+.g-product-info h3 {
+  font-family: var(--gentle-font-heading);
+  font-size: var(--gentle-font-body-lg);
+  font-weight: var(--gentle-weight-medium);
+  color: var(--gentle-text);
+  margin-bottom: 6px;
+}
+
+.g-product-info p {
+  font-size: var(--gentle-font-small);
+  color: var(--gentle-text-secondary);
+  line-height: var(--gentle-lh-base);
+}
+
+
+/* ===== 6. CLINICAL DATA (trust signals in care context) ===== */
+.g-clinical {
+  padding: var(--gentle-section) 0;
+  background: var(--gentle-bg);
+}
+
+.g-clinical-header {
+  margin-bottom: var(--gentle-space-8);
+}
+
+.g-clinical-header h2 {
+  font-size: var(--gentle-font-h2);
+  color: var(--gentle-text);
+}
+
+.g-clinical-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gentle-space-3);
+}
+
+.g-stat-card {
+  padding: var(--gentle-space-5);
+  background: var(--gentle-bg-card);
+  border-radius: var(--gentle-radius-md);
+  text-align: center;
+}
+
+.g-stat-number {
+  font-family: var(--gentle-font-heading);
+  font-size: 40px;
+  font-weight: var(--gentle-weight-medium);
+  color: var(--gentle-primary);
+  margin-bottom: var(--gentle-space-1);
+  line-height: 1;
+}
+
+.g-stat-label {
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-small);
+  color: var(--gentle-text-secondary);
+  line-height: 1.5;
+}
+
+
+/* ===== 7. DISCLAIMER ===== */
+.g-disclaimer {
+  padding: var(--gentle-space-4) 0;
+  border-top: 1px solid var(--gentle-border-light);
+  background: var(--gentle-bg);
+}
+
+.g-disclaimer p {
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-xs);
+  color: var(--gentle-text-tertiary);
+  line-height: var(--gentle-lh-relaxed);
+  max-width: var(--gentle-container-narrow);
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ===== 8. CTA ===== */
+.g-cta {
+  padding: var(--gentle-section) 0;
+  background: var(--gentle-bg-alt);
+  text-align: center;
+}
+
+.g-cta h2 {
+  font-size: var(--gentle-font-h2);
+  color: var(--gentle-text);
+  margin-bottom: var(--gentle-space-2);
+  font-weight: var(--gentle-weight-medium);
+}
+
+.g-cta-sub {
+  font-family: var(--gentle-font-heading);
+  font-size: var(--gentle-font-body-size);
+  font-style: italic;
+  color: var(--gentle-text-secondary);
+  margin-bottom: var(--gentle-space-6);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--gentle-lh-relaxed);
+}
+
+.g-cta-actions {
+  display: flex;
+  gap: var(--gentle-space-2);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ===== 9. FOOTER ===== */
+.g-footer {
+  background: var(--gentle-footer-bg);
+  color: var(--gentle-white);
+  padding: var(--gentle-space-8) 0 var(--gentle-space-4);
+}
+
+.g-footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--gentle-space-6);
+  margin-bottom: var(--gentle-space-6);
+}
+
+.g-footer-brand {
+  font-family: var(--gentle-font-heading);
+  font-size: 20px;
+  font-weight: var(--gentle-weight-medium);
+  margin-bottom: var(--gentle-space-1);
+}
+
+.g-footer p {
+  font-size: var(--gentle-font-small);
+  color: var(--gentle-footer-text);
+  line-height: var(--gentle-lh-relaxed);
+}
+
+.g-footer-links h4 {
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-xs);
+  font-weight: var(--gentle-weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gentle-footer-text);
+  margin-bottom: var(--gentle-space-2);
+}
+
+.g-footer-links ul { list-style: none; }
+.g-footer-links li { margin-bottom: var(--gentle-space-1); }
+.g-footer-links a {
+  font-size: var(--gentle-font-small);
+  color: var(--gentle-footer-text);
+  transition: var(--gentle-transition);
+}
+.g-footer-links a:hover { color: var(--gentle-accent-soft); }
+
+.g-footer-bottom {
+  padding-top: var(--gentle-space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  font-size: var(--gentle-font-xs);
+  color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .g-hero-inner { grid-template-columns: 1fr; gap: var(--gentle-space-6); }
+  .g-hero-visual { max-width: 400px; margin: 0 auto; order: -1; }
+  .g-features-grid { grid-template-columns: 1fr; }
+  .g-about-layout { grid-template-columns: 1fr; }
+  .g-about-visual { max-width: 400px; margin: 0 auto; order: -1; }
+  .g-products-grid { grid-template-columns: repeat(2, 1fr); }
+  .g-clinical-grid { grid-template-columns: repeat(2, 1fr); }
+  .g-footer-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .g-nav {
+    position: fixed;
+    top: 64px; left: -100%;
+    width: 100%; height: calc(100vh - 64px);
+    background: var(--gentle-bg);
+    flex-direction: column;
+    padding: var(--gentle-space-6);
+    transition: var(--gentle-transition);
+    gap: 0; z-index: 999;
+    border-top: 1px solid var(--gentle-border-light);
+  }
+  .g-nav.active { left: 0; }
+  .g-nav li { width: 100%; }
+  .g-nav a {
+    display: block;
+    padding: var(--gentle-space-2) 0;
+    font-size: var(--gentle-font-body-size);
+    border-bottom: 1px solid var(--gentle-border-light);
+  }
+  .g-nav-cta { margin-top: var(--gentle-space-2); text-align: center; display: block; }
+  .g-menu-toggle { display: flex; }
+
+  .g-hero { min-height: auto; padding: 110px 0 var(--gentle-space-10); }
+  .g-hero-actions { flex-direction: column; align-items: flex-start; }
+
+  .g-products-grid { grid-template-columns: 1fr; }
+  .g-clinical-grid { grid-template-columns: 1fr; }
+  .g-cta-actions { flex-direction: column; align-items: center; }
+}

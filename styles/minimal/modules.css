@@ -1,0 +1,475 @@
+/* =============================================
+   minimal — Module style overrides
+   Applies to the 9 standard modules
+   ============================================= */
+
+/* ===== 1. HEADER ===== */
+.m-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.m-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.m-logo {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.m-nav {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  align-items: center;
+}
+
+.m-nav a {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  transition: var(--transition);
+}
+.m-nav a:hover { color: var(--color-text); }
+
+.m-nav-cta {
+  background: var(--color-primary);
+  color: var(--color-white) !important;
+  padding: 8px 20px;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium) !important;
+}
+.m-nav-cta:hover { background: var(--color-primary-hover); }
+
+.m-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.m-menu-toggle span {
+  width: 20px;
+  height: 1.5px;
+  background: var(--color-text);
+}
+
+
+/* ===== 2. HERO ===== */
+.m-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--space-10);
+  background: var(--color-bg);
+}
+
+.m-hero-inner {
+  max-width: 680px;
+}
+
+.m-hero h1 {
+  font-size: var(--font-size-h1);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.03em;
+}
+
+.m-hero-sub {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+  max-width: 520px;
+}
+
+.m-hero-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+
+/* ===== 3. FEATURES ===== */
+.m-features {
+  padding: var(--spacing-section) 0;
+  background: var(--color-bg-alt);
+}
+
+.m-features-header {
+  margin-bottom: var(--space-8);
+}
+
+.m-features-header h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.m-features-header p {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+}
+
+.m-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.m-feature-card {
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+.m-feature-card:hover {
+  border-color: var(--color-text-tertiary);
+}
+
+.m-feature-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+  color: var(--color-accent);
+  font-size: 20px;
+}
+
+.m-feature-card h3 {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.m-feature-card p {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+
+/* ===== 4. ABOUT ===== */
+.m-about {
+  padding: var(--spacing-section) 0;
+  background: var(--color-bg);
+}
+
+.m-about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.m-about h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.m-about p {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.m-about-highlight {
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  border-left: 2px solid var(--color-accent);
+  padding-left: var(--space-3);
+  margin: var(--space-6) 0;
+}
+
+
+/* ===== 5. PRODUCTS ===== */
+.m-products {
+  padding: var(--spacing-section) 0;
+  background: var(--color-bg-alt);
+}
+
+.m-products-header {
+  margin-bottom: var(--space-8);
+}
+
+.m-products-header h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.m-products-header p {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+}
+
+.m-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.m-product-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.m-product-card:hover {
+  border-color: var(--color-text-tertiary);
+}
+
+.m-product-img {
+  height: 200px;
+  background: var(--color-bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-small);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.m-product-info {
+  padding: var(--space-3);
+}
+
+.m-product-info h3 {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.m-product-info p {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+}
+
+.m-product-tag {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-1);
+}
+
+
+/* ===== 6. CLINICAL DATA ===== */
+.m-clinical {
+  padding: var(--spacing-section) 0;
+  background: var(--color-bg);
+}
+
+.m-clinical-header {
+  margin-bottom: var(--space-8);
+}
+
+.m-clinical-header h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.m-clinical-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.m-stat-card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.m-stat-number {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-1);
+}
+
+.m-stat-label {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.m-stat-source {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-1);
+}
+
+
+/* ===== 7. DISCLAIMER ===== */
+.m-disclaimer {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.m-disclaimer p {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  line-height: var(--line-height-relaxed);
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ===== 8. CTA ===== */
+.m-cta {
+  padding: var(--spacing-section) 0;
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.m-cta h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.m-cta p {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-cta-actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+
+/* ===== 9. FOOTER ===== */
+.m-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-white);
+  padding: var(--space-8) 0 var(--space-4);
+}
+
+.m-footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.m-footer-brand {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.m-footer p {
+  font-size: var(--font-size-small);
+  color: var(--color-footer-text);
+  line-height: var(--line-height-relaxed);
+}
+
+.m-footer-links h4 {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-footer-text);
+  margin-bottom: var(--space-2);
+}
+
+.m-footer-links ul { list-style: none; }
+.m-footer-links li { margin-bottom: var(--space-1); }
+.m-footer-links a {
+  font-size: var(--font-size-small);
+  color: var(--color-footer-text);
+  transition: var(--transition);
+}
+.m-footer-links a:hover { color: var(--color-white); }
+
+.m-footer-bottom {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-footer-border);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  :root { --spacing-section: 96px; }
+  .m-features-grid { grid-template-columns: 1fr; }
+  .m-about-layout { grid-template-columns: 1fr; }
+  .m-products-grid { grid-template-columns: repeat(2, 1fr); }
+  .m-clinical-grid { grid-template-columns: repeat(2, 1fr); }
+  .m-footer-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --spacing-section: 72px; --container-pad: 20px; }
+
+  .m-nav {
+    position: fixed;
+    top: 52px; left: -100%;
+    width: 100%;
+    height: calc(100vh - 52px);
+    background: var(--color-bg);
+    flex-direction: column;
+    padding: var(--space-6);
+    transition: var(--transition);
+    gap: 0;
+    z-index: 999;
+    border-top: 1px solid var(--color-border);
+  }
+  .m-nav.active { left: 0; }
+  .m-nav li { width: 100%; }
+  .m-nav a {
+    display: block;
+    padding: var(--space-2) 0;
+    font-size: var(--font-size-body);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .m-nav-cta { margin-top: var(--space-2); text-align: center; display: block; }
+  .m-menu-toggle { display: flex; }
+
+  .m-hero { min-height: auto; padding: 100px 0 var(--space-10); }
+  .m-hero-actions { flex-direction: column; align-items: flex-start; }
+
+  .m-products-grid { grid-template-columns: 1fr; }
+  .m-clinical-grid { grid-template-columns: 1fr; }
+
+  .m-cta-actions { flex-direction: column; align-items: center; }
+}

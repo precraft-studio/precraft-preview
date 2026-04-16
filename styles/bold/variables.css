@@ -1,0 +1,80 @@
+/* =============================================
+   bold — 大膽衝擊風格
+   Design tokens only. No selectors.
+   ============================================= */
+
+:root {
+  /* ===== Colors ===== */
+  --bold-primary: #000000;
+  --bold-primary-hover: #1A1A1A;
+  --bold-accent: #FF3B30;
+  --bold-accent-hover: #E0332A;
+  --bold-highlight: #FFD60A;
+  --bold-bg: #FFFFFF;
+  --bold-bg-dark: #111111;
+  --bold-bg-alt: #1F1F1F;
+  --bold-bg-subtle: #F5F5F5;
+  --bold-text: #000000;
+  --bold-text-inverse: #FFFFFF;
+  --bold-text-secondary: #555555;
+  --bold-text-tertiary: #888888;
+  --bold-border: #000000;
+  --bold-border-light: #E0E0E0;
+  --bold-white: #FFFFFF;
+  --bold-footer-bg: #000000;
+  --bold-footer-text: rgba(255, 255, 255, 0.5);
+
+  /* ===== Typography ===== */
+  --bold-font-heading: 'Oswald', sans-serif;
+  --bold-font-body: 'Noto Sans TC', 'Inter', sans-serif;
+  --bold-font-body-en: 'Inter', sans-serif;
+
+  --bold-font-h1: clamp(48px, 7vw, 88px);
+  --bold-font-h2: clamp(32px, 5vw, 56px);
+  --bold-font-h3: 24px;
+  --bold-font-body-size: 16px;
+  --bold-font-body-lg: 18px;
+  --bold-font-small: 14px;
+  --bold-font-xs: 12px;
+
+  --bold-weight-normal: 400;
+  --bold-weight-medium: 500;
+  --bold-weight-bold: 700;
+  --bold-weight-black: 900;
+
+  --bold-lh-tight: 1.05;
+  --bold-lh-base: 1.6;
+  --bold-lh-relaxed: 1.75;
+
+  --bold-letter-tight: -0.03em;
+  --bold-letter-wide: 0.15em;
+
+  /* ===== Spacing ===== */
+  --bold-space-1: 8px;
+  --bold-space-2: 16px;
+  --bold-space-3: 24px;
+  --bold-space-4: 32px;
+  --bold-space-6: 48px;
+  --bold-space-8: 64px;
+  --bold-space-10: 80px;
+  --bold-section: 100px;
+
+  /* ===== Layout ===== */
+  --bold-container: 1200px;
+  --bold-pad: 24px;
+
+  /* ===== Radius ===== */
+  --bold-radius: 0px;
+  --bold-radius-sm: 2px;
+
+  /* ===== Borders ===== */
+  --bold-border-width: 2px;
+  --bold-border-thick: 3px;
+
+  /* ===== Shadows ===== */
+  --bold-shadow-hard: 4px 4px 0 var(--bold-primary);
+  --bold-shadow-accent: 4px 4px 0 var(--bold-accent);
+
+  /* ===== Transitions ===== */
+  --bold-transition: all 0.2s ease;
+}

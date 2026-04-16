@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRONCORE — FORGE YOUR LIMITS.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #00FF66;
+            --color-primary-dim: #00CC52;
+            --color-bg: #0A0A0A;
+            --color-bg-alt: #141414;
+            --color-bg-card: #1A1A1A;
+            --color-text: #FFFFFF;
+            --color-text-light: #999999;
+            --color-text-muted: #555555;
+            --color-border: #2A2A2A;
+            --color-white: #FFFFFF;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Noto Sans TC', sans-serif;
+            --font-body-en: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+            --radius: 4px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.7; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .nav-logo { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: var(--color-text); letter-spacing: 4px; text-transform: uppercase; }
+        .nav-logo span { color: var(--color-primary); }
+        .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+        .nav-links a { font-family: var(--font-heading); font-size: 13px; font-weight: 500; color: var(--color-text-light); letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-cta { background: var(--color-primary); color: var(--color-bg) !important; padding: 10px 24px; border-radius: var(--radius); font-weight: 600 !important; }
+        .nav-cta:hover { background: var(--color-primary-dim); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; background: var(--color-bg); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/ironcore/hero-main.png') center/cover no-repeat; opacity: 0.25; }
+        .hero::after { content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,255,102,0.06) 0%, transparent 70%); }
+        .hero-content { position: relative; z-index: 1; max-width: 700px; }
+        .hero-label { font-family: var(--font-heading); font-size: 13px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--color-primary); margin-bottom: 20px; }
+        .hero-tagline { font-family: var(--font-heading); font-size: clamp(48px, 8vw, 96px); font-weight: 700; color: var(--color-text); line-height: 1; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero-tagline em { color: var(--color-primary); font-style: normal; }
+        .hero-sub { font-size: 18px; font-weight: 500; color: var(--color-text-light); margin-bottom: 12px; }
+        .hero-desc { font-size: 15px; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 40px; max-width: 480px; }
+        .hero-btn { display: inline-block; padding: 16px 48px; background: var(--color-primary); color: var(--color-bg); border-radius: var(--radius); font-family: var(--font-heading); font-size: 15px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
+        .hero-btn:hover { background: var(--color-primary-dim); transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,255,102,0.3); }
+
+        /* ABOUT */
+        .about { padding: 100px 0; background: var(--color-bg-alt); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-label { font-family: var(--font-heading); font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--color-primary); margin-bottom: 16px; }
+        .about h2 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 40px); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+        .about p { font-size: 15px; color: var(--color-text-light); line-height: 2; margin-bottom: 16px; }
+        .about-stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .about-stat { text-align: center; padding: 24px; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius); }
+        .about-stat-num { font-family: var(--font-heading); font-size: 36px; font-weight: 700; color: var(--color-primary); }
+        .about-stat-label { font-size: 12px; color: var(--color-text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* PRODUCTS */
+        .products { padding: 100px 0; background: var(--color-bg); }
+        .products-header { margin-bottom: 56px; }
+        .products-header h2 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 40px); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .products-header p { font-size: 15px; color: var(--color-text-muted); }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .product-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; transition: var(--transition); }
+        .product-card:hover { border-color: var(--color-primary); transform: translateY(-4px); box-shadow: 0 0 20px rgba(0,255,102,0.1); }
+        .product-img { height: 200px; overflow: hidden; background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .product-info p { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
+
+        /* FOOTER */
+        .footer { background: var(--color-bg-alt); color: var(--color-text); padding: 48px 0 24px; border-top: 1px solid var(--color-border); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-heading); font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .footer-text { font-size: 13px; color: var(--color-text-muted); line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { font-family: var(--font-heading); font-size: 12px; color: var(--color-text-muted); letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); }
+        .footer-links a:hover { color: var(--color-primary); }
+        .footer-bottom { border-top: 1px solid var(--color-border); padding-top: 24px; text-align: center; font-size: 12px; color: var(--color-text-muted); line-height: 2; }
+        .precraft-badge { display: inline-block; margin-top: 16px; padding: 8px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 12px; color: var(--color-text-muted); }
+        .precraft-badge a { color: var(--color-primary); }
+
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: auto; padding: 120px 0 80px; }
+            .hero-tagline { font-size: clamp(40px, 10vw, 64px); }
+            .products-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .about-stat-grid { grid-template-columns: 1fr; }
+            .about, .products { padding: 72px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">IRON<span>CORE</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Equipment</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" class="nav-cta">Start Training</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-label">Performance Equipment &amp; Training</p>
+            <h1 class="hero-tagline">FORGE<br>YOUR <em>LIMITS.</em></h1>
+            <p class="hero-sub">為認真訓練的人，打造認真的器材</p>
+            <p class="hero-desc">IronCore 不做粉色小啞鈴。我們做能陪你 10 年的鐵件，為認真追求肌力進步的訓練者服務。</p>
+            <a href="#" class="hero-btn">Browse Equipment</a>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <p class="about-label">Our Story</p>
+                <h2>從選手需求出發</h2>
+                <p>IronCore 由三位競技舉重選手在 2020 年創立。在長年訓練中，他們發現市場上充斥著外觀花俏但不堪一擊的器材。他們決定自己做——從鋼材選擇到焊接工法，每一個環節都以選手等級的標準執行。</p>
+                <p>我們的客戶不是想在家拍照打卡的人。他們是每天早上五點到健身房報到的人、是為了下一場比賽準備的人、是把訓練當作人生紀律的人。</p>
+            </div>
+            <div>
+                <div class="about-stat-grid">
+                    <div class="about-stat">
+                        <div class="about-stat-num">500+</div>
+                        <div class="about-stat-label">Active Athletes</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-num">10yr</div>
+                        <div class="about-stat-label">Equipment Warranty</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-num">IPF</div>
+                        <div class="about-stat-label">Spec Standard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-header">
+            <h2>Equipment &amp; Services</h2>
+            <p>不妥協的器材，不妥協的訓練</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="assets/ironcore/product-barbell.png" alt="奧林匹克槓鈴組" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>奧林匹克槓鈴組</h3>
+                    <p>20kg 競技槓 + 碳鋼槓片組合，符合 IPF 規格標準。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/ironcore/product-shoes.png" alt="競技舉重鞋" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>競技舉重鞋</h3>
+                    <p>硬底木跟設計，前掌抓地穩固，適合深蹲與抓舉。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/ironcore/product-coaching.png" alt="一對一教練課" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>一對一教練課</h3>
+                    <p>由競技選手擔任教練，客製化肌力與爆發力訓練計畫。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/ironcore/product-program.png" alt="線上訓練計畫" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>線上訓練計畫</h3>
+                    <p>12 週週期化課表，含每日動作指導影片與進度追蹤。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">IRONCORE</div>
+                <p class="footer-text">Performance Equipment &amp; Training<br>info@ironcore.tw</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Equipment</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>此為 Precraft 風格展示用虛擬品牌 &middot; A demo brand by Precraft 緻作</p>
+            <div class="precraft-badge"><a href="../../index.html">查看 Precraft 緻作 &rarr;</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

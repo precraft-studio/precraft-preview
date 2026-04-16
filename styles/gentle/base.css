@@ -1,0 +1,107 @@
+/* =============================================
+   gentle — Base styles
+   Reset + typography + shared components
+
+   整體節奏：從容、不急迫、給呼吸的空間
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--gentle-font-body);
+  font-size: var(--gentle-font-body-size);
+  color: var(--gentle-text);
+  line-height: var(--gentle-lh-base);
+  background: var(--gentle-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--gentle-font-heading);
+  font-weight: var(--gentle-weight-medium);
+  line-height: var(--gentle-lh-tight);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+.g-container {
+  max-width: var(--gentle-container);
+  margin: 0 auto;
+  padding: 0 var(--gentle-pad);
+}
+
+.g-container-narrow {
+  max-width: var(--gentle-container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--gentle-pad);
+}
+
+/* Section label — quiet and understated */
+.g-label {
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-xs);
+  font-weight: var(--gentle-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gentle-accent);
+  margin-bottom: var(--gentle-space-2);
+}
+
+/* Buttons — soft and rounded but not childish */
+.g-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--gentle-font-sans);
+  font-size: var(--gentle-font-small);
+  font-weight: var(--gentle-weight-medium);
+  border-radius: var(--gentle-radius-md);
+  transition: var(--gentle-transition);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+
+.g-btn-primary {
+  background: var(--gentle-primary);
+  color: var(--gentle-white);
+  border-color: var(--gentle-primary);
+}
+.g-btn-primary:hover {
+  background: var(--gentle-primary-hover);
+  border-color: var(--gentle-primary-hover);
+}
+
+.g-btn-outline {
+  background: transparent;
+  color: var(--gentle-primary);
+  border-color: var(--gentle-border);
+}
+.g-btn-outline:hover {
+  border-color: var(--gentle-primary);
+}
+
+.g-btn-text {
+  background: transparent;
+  color: var(--gentle-text-secondary);
+  padding: 14px 0;
+  border: none;
+}
+.g-btn-text:hover {
+  color: var(--gentle-primary);
+}
+
+/* Soft divider */
+.g-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--gentle-accent-soft);
+  border: none;
+}

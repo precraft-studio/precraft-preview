@@ -1,0 +1,137 @@
+/* =============================================
+   editorial — Base styles
+   Reset + typography + shared components
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--editorial-font-body);
+  font-size: var(--editorial-font-body-size);
+  color: var(--editorial-text);
+  line-height: var(--editorial-lh-base);
+  background: var(--editorial-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--editorial-font-display);
+  font-weight: var(--editorial-weight-bold);
+  line-height: var(--editorial-lh-tight);
+  letter-spacing: var(--editorial-letter-tight);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Container */
+.e-container {
+  max-width: var(--editorial-container);
+  margin: 0 auto;
+  padding: 0 var(--editorial-pad);
+}
+
+.e-container-narrow {
+  max-width: var(--editorial-container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--editorial-pad);
+}
+
+/* Section label — magazine kicker style */
+.e-label {
+  font-family: var(--editorial-font-label);
+  font-size: var(--editorial-font-xs);
+  font-weight: var(--editorial-weight-medium);
+  letter-spacing: var(--editorial-letter-wide);
+  text-transform: uppercase;
+  color: var(--editorial-accent);
+  margin-bottom: var(--editorial-space-2);
+}
+
+/* Hairline rule */
+.e-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--editorial-border);
+  border: none;
+  margin: var(--editorial-space-6) 0;
+}
+
+.e-rule-light {
+  background: var(--editorial-border-light);
+}
+
+/* Buttons */
+.e-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--editorial-font-sans);
+  font-size: var(--editorial-font-small);
+  font-weight: var(--editorial-weight-medium);
+  border-radius: var(--editorial-radius);
+  transition: var(--editorial-transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.e-btn-primary {
+  background: var(--editorial-primary);
+  color: var(--editorial-white);
+  border-color: var(--editorial-primary);
+}
+.e-btn-primary:hover {
+  background: var(--editorial-primary-hover);
+}
+
+.e-btn-outline {
+  background: transparent;
+  color: var(--editorial-text);
+  border-color: var(--editorial-border);
+}
+.e-btn-outline:hover {
+  border-color: var(--editorial-primary);
+}
+
+.e-btn-text {
+  background: transparent;
+  color: var(--editorial-text-secondary);
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--editorial-border-light);
+}
+.e-btn-text:hover {
+  color: var(--editorial-text);
+  border-bottom-color: var(--editorial-primary);
+}
+
+/* Pull quote — editorial signature element */
+.e-pullquote {
+  font-family: var(--editorial-font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: var(--editorial-weight-normal);
+  font-style: italic;
+  color: var(--editorial-text);
+  line-height: 1.4;
+  border-top: 2px solid var(--editorial-primary);
+  border-bottom: 1px solid var(--editorial-border-light);
+  padding: var(--editorial-space-4) 0;
+  margin: var(--editorial-space-6) 0;
+}
+
+/* Caption text */
+.e-caption {
+  font-family: var(--editorial-font-label);
+  font-size: var(--editorial-font-caption);
+  color: var(--editorial-text-tertiary);
+  line-height: 1.5;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma — 每一杯，都是一趟風土的旅行</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+TC:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #6B4423;
+            --color-primary-dark: #553618;
+            --color-accent: #D4A574;
+            --color-bg: #FAF3E7;
+            --color-bg-alt: #F0E6D4;
+            --color-bg-white: #FFFFFF;
+            --color-text: #3E2C1C;
+            --color-text-light: #7A6455;
+            --color-text-muted: #A8947E;
+            --color-border: #E8DCC8;
+            --color-white: #FFFFFF;
+            --color-footer-bg: #2A1A0E;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Noto Serif TC', serif;
+            --font-body-en: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+            --radius: 8px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.9; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+        .nav-logo { font-family: var(--font-heading); font-size: 28px; font-weight: 600; color: var(--color-primary); letter-spacing: 1px; font-style: italic; }
+        .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+        .nav-links a { font-family: var(--font-body-en); font-size: 13px; color: var(--color-text-light); letter-spacing: 0.5px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-cta { background: var(--color-primary); color: var(--color-white) !important; padding: 10px 24px; border-radius: 24px; }
+        .nav-cta:hover { background: var(--color-primary-dark); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; background: var(--color-bg); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+        .hero-label { font-family: var(--font-body-en); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; }
+        .hero-tagline { font-family: var(--font-heading); font-size: clamp(36px, 5vw, 52px); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin-bottom: 20px; font-style: italic; }
+        .hero-sub { font-size: 17px; color: var(--color-text-light); margin-bottom: 12px; }
+        .hero-desc { font-size: 15px; color: var(--color-text-light); line-height: 2; margin-bottom: 36px; }
+        .hero-btn { display: inline-block; padding: 14px 36px; background: var(--color-primary); color: var(--color-white); border-radius: 24px; font-family: var(--font-body-en); font-size: 14px; letter-spacing: 1px; transition: var(--transition); }
+        .hero-btn:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+        .hero-visual { aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; }
+        .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ABOUT */
+        .about { padding: 100px 0; background: var(--color-bg-white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
+        .about-visual { aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; }
+        .about-visual img { width: 100%; height: 100%; object-fit: cover; }
+        .about-label { font-family: var(--font-body-en); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; }
+        .about h2 { font-family: var(--font-heading); font-size: clamp(26px, 4vw, 36px); font-weight: 600; color: var(--color-primary); margin-bottom: 24px; font-style: italic; }
+        .about p { font-size: 16px; line-height: 2.2; color: var(--color-text); margin-bottom: 20px; }
+
+        /* PRODUCTS */
+        .products { padding: 100px 0; background: var(--color-bg); }
+        .products-header { text-align: center; margin-bottom: 56px; }
+        .products-header h2 { font-family: var(--font-heading); font-size: clamp(26px, 4vw, 36px); font-weight: 600; color: var(--color-primary); margin-bottom: 8px; font-style: italic; }
+        .products-header p { font-size: 15px; color: var(--color-text-light); }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: var(--color-bg-white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(107,68,35,0.1); }
+        .product-img { height: 220px; overflow: hidden; background: var(--color-bg-alt); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 24px; }
+        .product-info h3 { font-family: var(--font-heading); font-size: 19px; color: var(--color-primary); margin-bottom: 8px; font-style: italic; }
+        .product-info p { font-size: 14px; color: var(--color-text-light); line-height: 1.7; }
+
+        /* FOOTER */
+        .footer { background: var(--color-footer-bg); color: var(--color-white); padding: 48px 0 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-heading); font-size: 22px; font-weight: 600; font-style: italic; margin-bottom: 8px; }
+        .footer-text { font-size: 13px; opacity: 0.5; line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: var(--transition); }
+        .footer-links a:hover { color: var(--color-accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 12px; opacity: 0.35; line-height: 2; }
+        .precraft-badge { display: inline-block; margin-top: 16px; padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; font-size: 12px; opacity: 0.6; }
+        .precraft-badge a { color: var(--color-accent); }
+
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero-visual { max-width: 400px; margin: 0 auto; order: -1; }
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-visual { max-width: 400px; margin: 0 auto; order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: auto; padding: 120px 0 80px; }
+            .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .about, .products { padding: 72px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Aroma</a>
+            <ul class="nav-links">
+                <li><a href="#">咖啡豆</a></li>
+                <li><a href="#">我們的故事</a></li>
+                <li><a href="#">沖煮教學</a></li>
+                <li><a href="#" class="nav-cta">線上訂購</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <p class="hero-label">Specialty Coffee Roasters</p>
+                <h1 class="hero-tagline">每一杯，都是一趟<br>風土的旅行</h1>
+                <p class="hero-sub">單一產地直送 · 每週新鮮小批量烘焙</p>
+                <p class="hero-desc">Aroma 不追求連鎖規模，只做認真的咖啡。從哥斯大黎加的火山土壤到你的早晨杯中，每一顆豆子都能追溯到產地。</p>
+                <a href="#" class="hero-btn">Browse Our Beans</a>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/aroma/hero-main.png" alt="Aroma 品牌視覺：手沖咖啡與烘焙工坊">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual">
+                <img src="assets/aroma/about-roastery.png" alt="Aroma 烘焙工坊場景" loading="lazy">
+            </div>
+            <div>
+                <p class="about-label">Our Story</p>
+                <h2>從火山腳下到台北巷弄</h2>
+                <p>2019 年，一對夫妻在哥斯大黎加的 Tarrazú 產區旅行時，第一次喝到剛烘好 48 小時的咖啡。那杯有著蜜桃香和巧克力尾韻的咖啡，讓他們意識到——台北街頭喝到的「精品咖啡」，離產地的味道有多遠。</p>
+                <p>回台後，他們在民生社區的一條安靜巷弄裡開了 Aroma 的第一間烘焙工坊。沒有華麗的裝潢，只有一台 Probat 烘焙機、幾袋生豆、和每週兩天的烘焙日。</p>
+                <p>我們相信好的咖啡不需要過多解釋。你只要喝一口，就會知道新鮮的差別。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-header">
+            <h2>This Week's Roast</h2>
+            <p>每週三、五新鮮烘焙，從烘豆到出貨不超過 72 小時</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="assets/aroma/product-yirgacheffe.png" alt="日曬耶加雪菲淺焙豆" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>日曬耶加雪菲</h3>
+                    <p>淺焙 · 衣索比亞<br>茉莉花香、蜜桃、檸檬酸質。適合手沖。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/aroma/product-colombia.png" alt="水洗哥倫比亞中焙豆" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>水洗哥倫比亞</h3>
+                    <p>中焙 · 哥倫比亞<br>焦糖、堅果、可可尾韻。手沖或義式皆宜。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/aroma/product-class.png" alt="手沖咖啡體驗課程" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>手沖體驗課程</h3>
+                    <p>2 小時 · 小班制<br>從磨豆到注水，學會用一壺熱水萃出好味道。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/aroma/product-roaster.png" alt="家用烘焙機" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>家用烘焙機</h3>
+                    <p>自家烘焙入門<br>在家就能烘出 200g 新鮮咖啡豆，附操作指南。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">Aroma</div>
+                <p class="footer-text">Specialty Coffee Roasters · 台北民生社區<br>hello@aroma-coffee.tw</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">咖啡豆</a></li>
+                <li><a href="#">我們的故事</a></li>
+                <li><a href="#">沖煮教學</a></li>
+                <li><a href="#">門市資訊</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>此為 Precraft 風格展示用虛擬品牌 &middot; A demo brand by Precraft 緻作</p>
+            <div class="precraft-badge"><a href="../../index.html">查看 Precraft 緻作 &rarr;</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

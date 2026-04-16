@@ -1,0 +1,93 @@
+/* =============================================
+   warm — Base styles
+   Reset + typography + shared components
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--warm-font-body);
+  font-size: var(--warm-font-body-size);
+  color: var(--warm-text);
+  line-height: var(--warm-lh-base);
+  background: var(--warm-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--warm-font-heading);
+  font-weight: var(--warm-weight-semibold);
+  line-height: var(--warm-lh-tight);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Container */
+.w-container {
+  max-width: var(--warm-container);
+  margin: 0 auto;
+  padding: 0 var(--warm-pad);
+}
+
+/* Section label */
+.w-label {
+  font-family: var(--warm-font-body-en);
+  font-size: var(--warm-font-xs);
+  font-weight: var(--warm-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-accent);
+  margin-bottom: var(--warm-space-2);
+}
+
+/* Buttons */
+.w-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--warm-font-body);
+  font-size: var(--warm-font-small);
+  font-weight: var(--warm-weight-medium);
+  border-radius: var(--warm-radius-pill);
+  transition: var(--warm-transition);
+  cursor: pointer;
+  border: none;
+}
+
+.w-btn-primary {
+  background: var(--warm-primary);
+  color: var(--warm-white);
+}
+.w-btn-primary:hover {
+  background: var(--warm-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--warm-shadow-hover);
+}
+
+.w-btn-outline {
+  background: transparent;
+  color: var(--warm-primary);
+  border: 1.5px solid var(--warm-border);
+}
+.w-btn-outline:hover {
+  border-color: var(--warm-primary);
+}
+
+.w-btn-text {
+  background: transparent;
+  color: var(--warm-text-secondary);
+  padding: 14px 0;
+}
+.w-btn-text:hover {
+  color: var(--warm-primary);
+}

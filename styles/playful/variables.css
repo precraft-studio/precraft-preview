@@ -1,0 +1,76 @@
+/* =============================================
+   playful — 活潑趣味風格
+   Design tokens only. No selectors.
+   ============================================= */
+
+:root {
+  /* ===== Colors ===== */
+  --playful-primary: #4F7EF5;
+  --playful-primary-hover: #3D6BE0;
+  --playful-secondary: #FF8C42;
+  --playful-yellow: #FFD93D;
+  --playful-green: #6BCB77;
+  --playful-bg: #FFFFFF;
+  --playful-bg-alt: #E8F0FF;
+  --playful-bg-warm: #FFF8E1;
+  --playful-bg-subtle: #F5F8FF;
+  --playful-text: #1E3A8A;
+  --playful-text-secondary: #5B6879;
+  --playful-text-tertiary: #94A3B8;
+  --playful-border: #D0D9E8;
+  --playful-border-light: #E8EEF8;
+  --playful-white: #FFFFFF;
+  --playful-footer-bg: #1E3A8A;
+  --playful-footer-text: rgba(255, 255, 255, 0.6);
+
+  /* ===== Typography ===== */
+  --playful-font-heading: 'Poppins', sans-serif;
+  --playful-font-body: 'Noto Sans TC', 'Poppins', sans-serif;
+  --playful-font-body-en: 'Poppins', sans-serif;
+
+  --playful-font-h1: clamp(36px, 5vw, 56px);
+  --playful-font-h2: clamp(28px, 4vw, 40px);
+  --playful-font-h3: 22px;
+  --playful-font-body-size: 16px;
+  --playful-font-body-lg: 18px;
+  --playful-font-small: 14px;
+  --playful-font-xs: 12px;
+
+  --playful-weight-normal: 400;
+  --playful-weight-medium: 500;
+  --playful-weight-semibold: 600;
+
+  --playful-lh-tight: 1.2;
+  --playful-lh-base: 1.7;
+  --playful-lh-relaxed: 1.8;
+
+  /* ===== Spacing ===== */
+  --playful-space-1: 8px;
+  --playful-space-2: 16px;
+  --playful-space-3: 24px;
+  --playful-space-4: 32px;
+  --playful-space-6: 48px;
+  --playful-space-8: 64px;
+  --playful-space-10: 80px;
+  --playful-section: 100px;
+
+  /* ===== Layout ===== */
+  --playful-container: 1080px;
+  --playful-pad: 24px;
+
+  /* ===== Radius ===== */
+  --playful-radius-sm: 12px;
+  --playful-radius-md: 16px;
+  --playful-radius-lg: 24px;
+  --playful-radius-xl: 32px;
+  --playful-radius-pill: 999px;
+
+  /* ===== Shadows ===== */
+  --playful-shadow-sm: 0 2px 8px rgba(79, 126, 245, 0.08);
+  --playful-shadow-md: 0 4px 16px rgba(79, 126, 245, 0.12);
+  --playful-shadow-hover: 0 8px 24px rgba(79, 126, 245, 0.16);
+  --playful-shadow-warm: 0 4px 16px rgba(255, 140, 66, 0.15);
+
+  /* ===== Transitions ===== */
+  --playful-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

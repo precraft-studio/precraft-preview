@@ -1,0 +1,76 @@
+/* =============================================
+   minimal — 極簡現代風格
+   Design tokens only. No selectors.
+   ============================================= */
+
+:root {
+  /* ===== Colors ===== */
+  --color-primary: #0A0A0A;
+  --color-primary-hover: #1A1A1A;
+  --color-accent: #1E40AF;
+  --color-accent-hover: #1E3A8A;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F9FAFB;
+  --color-bg-subtle: #F3F4F6;
+  --color-text: #0A0A0A;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+  --color-white: #FFFFFF;
+  --color-footer-bg: #0A0A0A;
+  --color-footer-text: rgba(255, 255, 255, 0.5);
+  --color-footer-border: rgba(255, 255, 255, 0.08);
+
+  /* ===== Typography ===== */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Noto Sans TC', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  --font-size-h1: clamp(40px, 5vw, 64px);
+  --font-size-h2: clamp(28px, 4vw, 40px);
+  --font-size-h3: 24px;
+  --font-size-body: 16px;
+  --font-size-body-lg: 18px;
+  --font-size-small: 14px;
+  --font-size-xs: 12px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --line-height-tight: 1.15;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.75;
+
+  /* ===== Spacing (8px grid) ===== */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --spacing-section: 120px;
+
+  /* ===== Layout ===== */
+  --container-max: 1120px;
+  --container-narrow: 720px;
+  --container-pad: 24px;
+
+  /* ===== Radius ===== */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 0 0 2px var(--color-accent);
+
+  /* ===== Transitions ===== */
+  --transition: all 0.2s ease;
+  --transition-slow: all 0.4s ease;
+}

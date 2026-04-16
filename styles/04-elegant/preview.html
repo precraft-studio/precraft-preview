@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-elegant 風格預覽 — website-modules</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <!-- Elegant Style Variables + Base -->
+    <link rel="stylesheet" href="variables.css">
+
+    <!-- Module Styles -->
+    <link rel="stylesheet" href="../../modules/layout/header-01-simple/styles.css">
+    <link rel="stylesheet" href="../../modules/hero/hero-01-fullscreen/styles.css">
+    <link rel="stylesheet" href="../../modules/features/features-01-icons/styles.css">
+    <link rel="stylesheet" href="../../modules/about/about-01-story/styles.css">
+    <link rel="stylesheet" href="../../modules/about/about-02-story-founder/styles.css">
+    <link rel="stylesheet" href="../../modules/products/products-01-grid/styles.css">
+    <link rel="stylesheet" href="../../modules/testimonials/clinical-data-01/styles.css">
+    <link rel="stylesheet" href="../../modules/common/disclaimer-01/styles.css">
+    <link rel="stylesheet" href="../../modules/layout/footer-01-simple/styles.css">
+
+    <style>
+        /* Preview-only: hero needs a fallback background since we don't have the actual image */
+        .hero-fullscreen {
+            background: var(--gradient-page-header);
+        }
+        .hero-bg { display: none; }
+
+        /* Preview-only: product images placeholder */
+        .product-image img {
+            background: var(--color-bg-light);
+        }
+
+        /* Preview banner */
+        .preview-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            font-size: 13px;
+            z-index: 9999;
+            font-family: var(--font-body);
+        }
+        .preview-banner a { color: var(--color-accent); }
+        .navbar { top: 34px; }
+
+        /* Ensure proper spacing for fixed navbar + preview banner */
+        .hero-fullscreen { margin-top: 34px; }
+
+        /* Preview section divider */
+        .preview-divider {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+
+        /* Combined about + features layout (as in original) */
+        .about-combined-section {
+            background: var(--color-bg);
+            padding: var(--spacing-section) 0;
+        }
+        .about-combined-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        @media (max-width: 992px) {
+            .about-combined-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        /* Override for combined view: remove section padding from inner modules */
+        .about-combined-grid .features-section,
+        .about-combined-grid .about-story-section {
+            padding: 0;
+        }
+        .about-combined-grid .about-story-card {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preview Banner -->
+    <div class="preview-banner">
+        04-elegant 風格預覽 — 共 9 個模組 | <a href="../../modules/">回到模組庫</a>
+    </div>
+
+    <!-- ========== MODULE 1: Header ========== -->
+    <div class="preview-divider">Module 1 — header-01-simple</div>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">
+                    <div class="logo-text-group">
+                        <span style="font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--color-primary);">BRAND</span>
+                        <span class="logo-subtitle">品牌代理商</span>
+                        <span class="logo-company">範例有限公司</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="選單">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="active">首頁</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">產品系列</a></li>
+                    <li><a href="#">臨床研究</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="#" class="btn-shop">官方商城</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== MODULE 2: Hero + Stats Banner ========== -->
+    <div class="preview-divider">Module 2 — hero-01-fullscreen + Stats Banner</div>
+    <section class="hero-fullscreen">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 style="color: var(--color-white); text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">品牌名稱 專業護理產品</h1>
+                <p class="hero-subtitle">30年研發經驗 × 皮膚科臨床測試<br>獨家專利配方 · 適合亞洲膚質</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">探索產品系列</a>
+                    <a href="#" class="btn btn-secondary">了解品牌故事</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">年以上<br>研發經驗</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="stat-label">專業實驗室<br>完整的開發流程</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">全球國家<br>銷售</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="stat-label">皮膚科<br>認證推薦</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULE 3 + 4: Features + About (Combined) ========== -->
+    <div class="preview-divider">Module 3 + 4 — features-01-icons + about-01-story (Combined Layout)</div>
+    <section class="about-combined-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>科學護理品牌</h2>
+                <p>多年研究，全球信賴</p>
+            </div>
+            <div class="about-combined-grid">
+                <!-- Left: Features -->
+                <section class="features-section">
+                    <div class="features-grid-icons">
+                        <div class="feature-icon-card">
+                            <div class="feature-icon-wrapper"><i class="fas fa-flask"></i></div>
+                            <div class="feature-icon-content">
+                                <h3>專利配方技術</h3>
+                                <p>獨家草本複合物，經臨床測試有助於改善使用效果，強化產品核心功效</p>
+                            </div>
+                        </div>
+                        <div class="feature-icon-card">
+                            <div class="feature-icon-wrapper"><i class="fas fa-microscope"></i></div>
+                            <div class="feature-icon-content">
+                                <h3>先進科研技術</h3>
+                                <p>將活性成分包覆於微脂囊中，幫助成分穩定與發揮，提升產品使用體驗</p>
+                            </div>
+                        </div>
+                        <div class="feature-icon-card">
+                            <div class="feature-icon-wrapper"><i class="fas fa-certificate"></i></div>
+                            <div class="feature-icon-content">
+                                <h3>皮膚科認證</h3>
+                                <p>所有產品經過嚴格皮膚科臨床測試，低敏配方，適合敏感膚質</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Right: About -->
+                <section class="about-story-section">
+                    <div class="about-story-card">
+                        <h3>關於品牌</h3>
+                        <p>本品牌擁有超過 30 年的研究經驗，專注於研發高效能、皮膚科認證的護理產品。</p>
+                        <p>結合天然植物萃取與先進科技，為消費者提供專業級的解決方案。</p>
+                        <p>產品暢銷全球 50 多個國家，深受消費者信賴。</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULE 5: Brand Story ========== -->
+    <div class="preview-divider">Module 5 — about-02-story-founder</div>
+    <section class="brand-story-section">
+        <div class="container">
+            <div class="brand-story-wrapper">
+                <div class="brand-story-header">
+                    <div class="brand-story-badge">
+                        <i class="fas fa-heart"></i>
+                        <span>BRAND STORY</span>
+                    </div>
+                    <h2>一個真實的故事</h2>
+                    <p>從個人經歷到品牌使命｜關於陪伴、信任與重新找回自信的旅程</p>
+                </div>
+
+                <div class="brand-story-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="brand-story-quote-text">
+                        創辦人曾經也是一位面對<strong style="color: var(--color-primary);">產品困擾</strong>的使用者。<br>
+                        在經歷多次挫折後，<br>
+                        他決心成為 <strong style="color: var(--color-primary);">品牌台灣總代理</strong>，<br>
+                        讓每一位有需要的人都能<strong>安心取得正規產品</strong>。
+                    </div>
+                    <div class="brand-story-quote-divider"></div>
+                </div>
+
+                <div class="brand-story-values">
+                    <div class="brand-story-value-card">
+                        <i class="fas fa-user-md"></i>
+                        <h4>親身使用經驗</h4>
+                        <p>從使用者角度出發<br>真實體會產品效果</p>
+                    </div>
+                    <div class="brand-story-value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>正規貨源保證</h4>
+                        <p>原廠授權<br>正式總代理</p>
+                    </div>
+                    <div class="brand-story-value-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>陪伴式服務</h4>
+                        <p>不只賣產品<br>更提供長期陪伴支持</p>
+                    </div>
+                </div>
+
+                <div class="brand-story-cta">
+                    <a href="#" class="btn btn-cta">
+                        <span>閱讀完整故事</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <p class="brand-story-closing">「這不只是品牌的開始，更是一種陪伴」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULE 6: Products Grid ========== -->
+    <div class="preview-divider">Module 6 — products-01-grid</div>
+    <section class="products-grid-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>精選產品系列</h2>
+                <p>針對不同需求，提供專業解決方案</p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">SERIES A</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-text-light);"><i class="fas fa-image" style="font-size: 48px; opacity: 0.3;"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>產品名稱一</h3>
+                        <p class="product-usage">適用族群說明 | 規格 | 300ml</p>
+                        <div class="product-ingredients">
+                            <span class="ingredient-tag">成分 A</span>
+                            <span class="ingredient-tag">成分 B</span>
+                            <span class="ingredient-tag">成分 C</span>
+                        </div>
+                        <p class="product-highlight">✨ 臨床測試數據亮點*</p>
+                        <div class="product-buttons">
+                            <a href="#" class="btn-detail">查看詳情</a>
+                            <a href="#" class="btn-buy">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">SERIES B</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-text-light);"><i class="fas fa-image" style="font-size: 48px; opacity: 0.3;"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>產品名稱二</h3>
+                        <p class="product-usage">適用族群說明 | 規格 | 300ml</p>
+                        <div class="product-ingredients">
+                            <span class="ingredient-tag">成分 D</span>
+                            <span class="ingredient-tag">成分 E</span>
+                        </div>
+                        <p class="product-highlight">✨ 使用者滿意度 94%*</p>
+                        <div class="product-buttons">
+                            <a href="#" class="btn-detail">查看詳情</a>
+                            <a href="#" class="btn-buy">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">SERIES C</span>
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-text-light);"><i class="fas fa-image" style="font-size: 48px; opacity: 0.3;"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>產品名稱三</h3>
+                        <p class="product-usage">適用族群說明 | 規格 | 30ml</p>
+                        <div class="product-ingredients">
+                            <span class="ingredient-tag">成分 F</span>
+                            <span class="ingredient-tag">成分 G</span>
+                        </div>
+                        <p class="product-highlight">✨ 使用後有感改善*</p>
+                        <div class="product-buttons">
+                            <a href="#" class="btn-detail">查看詳情</a>
+                            <a href="#" class="btn-buy">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-view-all">
+                <a href="#" class="btn btn-cta">查看全部產品系列 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULE 7: Clinical Data ========== -->
+    <div class="preview-divider">Module 7 — clinical-data-01</div>
+    <section class="clinical-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>臨床測試的配方</h2>
+                <p>經專業皮膚科臨床測試驗證</p>
+            </div>
+
+            <div class="clinical-stats-grid">
+                <div class="clinical-stat-card">
+                    <div class="clinical-stat-number">86%*</div>
+                    <div class="clinical-stat-product">受試者感受改善* 產品A</div>
+                    <div class="clinical-stat-source">使用 6 個月，大學研究*</div>
+                </div>
+                <div class="clinical-stat-card">
+                    <div class="clinical-stat-number">93%*</div>
+                    <div class="clinical-stat-product">受試者感受改善* 產品B</div>
+                    <div class="clinical-stat-source">臨床測試數據*</div>
+                </div>
+                <div class="clinical-stat-card">
+                    <div class="clinical-stat-number">94%</div>
+                    <div class="clinical-stat-product">產品 C 系列</div>
+                    <div class="clinical-stat-source">使用者感受改善*</div>
+                </div>
+                <div class="clinical-stat-card">
+                    <div class="clinical-stat-number">94.7%</div>
+                    <div class="clinical-stat-product">使用者回饋</div>
+                    <div class="clinical-stat-source">使用者感受提升*</div>
+                </div>
+            </div>
+
+            <div class="clinical-cta">
+                <a href="#" class="btn btn-cta">查看完整臨床研究 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULE 8: Disclaimer ========== -->
+    <div class="preview-divider">Module 8 — disclaimer-01</div>
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-content">
+                <p>
+                    <strong>※ 重要聲明：</strong>
+                    本網站所有臨床數據來自原廠研究報告，測試在特定條件下進行（包含特定期間、受試者人數與測試方法）。
+                    實際使用效果因個人膚質、使用方式、生活習慣及個人體質而有所不同。
+                    本資料僅供參考，不代表使用本產品即可獲得相同效果。
+                    使用前建議詳閱產品說明，如有任何疑慮請諮詢專業人員。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULE 9: Footer ========== -->
+    <div class="preview-divider">Module 9 — footer-01-simple</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>BRAND NAME</h3>
+                    <p>範例有限公司 | 台灣總代理</p>
+                    <p>專業護理品牌<br>多年科學研究，全球信賴</p>
+                    <p class="footer-contact">
+                        <a href="#">contact@example.com</a><br>
+                        <a href="#">0900-000-000</a><br>
+                        週一至週五 09:00-18:00
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LINE"><i class="fab fa-line"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">產品系列</a></li>
+                        <li><a href="#">臨床研究</a></li>
+                        <li><a href="#">常見問題</a></li>
+                        <li><a href="#">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>線上購買</h4>
+                    <ul>
+                        <li><a href="#">官方商城</a></li>
+                        <li><a href="#">蝦皮購物</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Brand Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript: Mobile Menu Toggle + Fade-in -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Also make non-fade-in cards visible immediately for preview
+        document.querySelectorAll('.stat-card, .feature-icon-card, .product-card, .clinical-stat-card, .brand-story-value-card').forEach(el => {
+            if (!el.classList.contains('fade-in')) {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

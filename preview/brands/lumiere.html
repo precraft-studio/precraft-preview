@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumiere — For the skin you'll wear forever.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #7B2D3C;
+            --color-primary-dark: #5E2130;
+            --color-accent: #C9A961;
+            --color-bg: #FAF7F2;
+            --color-bg-alt: #F3EDE4;
+            --color-bg-white: #FFFFFF;
+            --color-text: #3C2A21;
+            --color-text-light: #7A6A5E;
+            --color-text-muted: #A89888;
+            --color-border: #E8DFD4;
+            --color-white: #FFFFFF;
+            --color-footer-bg: #2C1A20;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Noto Serif TC', serif;
+            --font-body-en: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+            --radius: 8px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.8; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+        .nav-logo { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--color-primary); letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .nav-links a { font-family: var(--font-body-en); font-size: 13px; color: var(--color-text-light); letter-spacing: 1px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-cta { background: var(--color-primary); color: var(--color-white) !important; padding: 10px 24px; border-radius: 24px; }
+        .nav-cta:hover { background: var(--color-primary-dark); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; background: var(--color-bg); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .hero-tagline { font-family: var(--font-display); font-size: clamp(38px, 5vw, 56px); font-weight: 600; color: var(--color-primary); line-height: 1.15; margin-bottom: 20px; font-style: italic; }
+        .hero-sub { font-size: 16px; color: var(--color-text-light); margin-bottom: 12px; letter-spacing: 2px; }
+        .hero-desc { font-size: 15px; color: var(--color-text-light); line-height: 1.9; margin-bottom: 36px; }
+        .hero-btn { display: inline-block; padding: 14px 36px; background: var(--color-primary); color: var(--color-white); border-radius: 24px; font-family: var(--font-body-en); font-size: 14px; letter-spacing: 1px; transition: var(--transition); }
+        .hero-btn:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+        .hero-visual { aspect-ratio: 4/5; border-radius: 200px 200px 16px 16px; overflow: hidden; }
+        .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ABOUT */
+        .about { padding: 120px 0; background: var(--color-bg-white); }
+        .about-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+        .about-label { font-family: var(--font-body-en); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; }
+        .about h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); color: var(--color-primary); margin-bottom: 32px; }
+        .about p { font-size: 16px; line-height: 2.2; color: var(--color-text); margin-bottom: 24px; }
+
+        /* PRODUCTS */
+        .products { padding: 120px 0; background: var(--color-bg); }
+        .products-header { text-align: center; margin-bottom: 64px; }
+        .products-header h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); color: var(--color-primary); margin-bottom: 12px; }
+        .products-header p { font-size: 15px; color: var(--color-text-light); }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+        .product-card { background: var(--color-bg-white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(123,45,60,0.1); }
+        .product-img { height: 240px; overflow: hidden; background: var(--color-bg-alt); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 24px; }
+        .product-info h3 { font-family: var(--font-display); font-size: 20px; color: var(--color-primary); margin-bottom: 8px; font-style: italic; }
+        .product-info p { font-size: 14px; color: var(--color-text-light); line-height: 1.7; }
+
+        /* FOOTER */
+        .footer { background: var(--color-footer-bg); color: var(--color-white); padding: 48px 0 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-display); font-size: 22px; margin-bottom: 8px; }
+        .footer-text { font-size: 13px; opacity: 0.5; line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: var(--transition); }
+        .footer-links a:hover { color: var(--color-accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 12px; opacity: 0.35; line-height: 2; }
+        .precraft-badge { display: inline-block; margin-top: 16px; padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; font-size: 12px; opacity: 0.6; letter-spacing: 0.5px; }
+        .precraft-badge a { color: var(--color-accent); }
+
+        /* RWD */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero-visual { max-width: 320px; margin: 0 auto; order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: auto; padding: 120px 0 80px; }
+            .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .about { padding: 80px 0; }
+            .products { padding: 80px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Lumiere</a>
+            <ul class="nav-links">
+                <li><a href="#">Collection</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#" class="nav-cta">Shop Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <p class="hero-sub">FRENCH AESTHETICS &middot; MADE IN TAIWAN</p>
+                <h1 class="hero-tagline">For the skin<br>you'll wear forever.</h1>
+                <p class="hero-desc">從一片普羅旺斯的薰衣草田開始，Lumiere 將法式美學與台灣製造品質結合，為在乎細節的你打造每日儀式感的保養。</p>
+                <a href="#" class="hero-btn">Explore Collection</a>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/lumiere/hero-main.png" alt="Lumiere 品牌視覺：大理石檯面上的琥珀色精華瓶與薰衣草">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-inner">
+            <p class="about-label">Our Story</p>
+            <h2>從薰衣草田到你的梳妝台</h2>
+            <p>2018 年，一位台灣女性在法國普羅旺斯的薰衣草田中，被陽光下植物的香氣觸動。那一刻她決定，將歐洲對美的理解與台灣精密的製造能力結合，做出真正值得每天使用的保養品。</p>
+            <p>Lumiere 不追求華麗的成分清單。我們相信好的保養是一種日常儀式——每天早晚，用雙手感受配方的溫潤，讓肌膚在從容中找回它本來的樣子。</p>
+            <p>每一支產品都在台灣自有實驗室完成配方開發與穩定性測試，成分濃度完整標示，不做過度包裝。因為真正的精品，不需要喧嘩。</p>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-header">
+            <h2>La Collection</h2>
+            <p>為每日儀式而生的精品保養</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="assets/lumiere/product-essence.png" alt="L'Essence 玻尿酸修護精華液" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>L'Essence</h3>
+                    <p>玻尿酸修護精華液 30ml<br>為肌膚注入深層水潤，輕盈不黏膩的日常精華。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/lumiere/product-eau.png" alt="L'Eau 玫瑰保濕化妝水" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>L'Eau</h3>
+                    <p>玫瑰保濕化妝水 150ml<br>以大馬士革玫瑰萃取為基底，溫和喚醒肌膚。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/lumiere/product-baume.png" alt="Le Baume 積雪草修護乳霜" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>Le Baume</h3>
+                    <p>積雪草修護乳霜 50ml<br>為敏感時刻而生，厚實卻透氣的修護屏障。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/lumiere/product-creme.png" alt="La Creme 緊緻眼周精華霜" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>La Creme</h3>
+                    <p>緊緻眼周精華霜 15ml<br>輕盈質地撫平眼周細紋，重拾明亮眼神。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">Lumiere</div>
+                <p class="footer-text">French Aesthetics &middot; Made in Taiwan<br>info@lumiere-beauty.tw</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Collection</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>此為 Precraft 風格展示用虛擬品牌 &middot; A demo brand by Precraft 緻作</p>
+            <div class="precraft-badge"><a href="../../index.html">查看 Precraft 緻作 &rarr;</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

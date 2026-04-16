@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Noir — Design speaks for itself.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0A0A0A;
+            --color-accent: #C0C0C0;
+            --color-bg: #F8F8F8;
+            --color-bg-alt: #EEEEEE;
+            --color-bg-white: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-light: #666666;
+            --color-text-muted: #999999;
+            --color-border: #E0E0E0;
+            --color-white: #FFFFFF;
+            --color-footer-bg: #0A0A0A;
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Noto Sans TC', 'Inter', sans-serif;
+            --font-body-en: 'Inter', sans-serif;
+            --transition: all 0.25s ease;
+            --radius: 0px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); line-height: 1.6; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .nav-logo { font-family: var(--font-heading); font-size: 18px; font-weight: 800; color: var(--color-primary); letter-spacing: 6px; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .nav-links a { font-family: var(--font-body-en); font-size: 12px; font-weight: 500; color: var(--color-text-light); letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-primary); }
+        .nav-cta { background: var(--color-primary); color: var(--color-white) !important; padding: 10px 24px; }
+        .nav-cta:hover { opacity: 0.8; }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; background: var(--color-bg); }
+        .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .hero-label { font-family: var(--font-body-en); font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 24px; }
+        .hero-tagline { font-family: var(--font-heading); font-size: clamp(40px, 5vw, 60px); font-weight: 800; color: var(--color-primary); line-height: 1.05; margin-bottom: 24px; letter-spacing: -1px; text-transform: uppercase; }
+        .hero-desc { font-size: 15px; color: var(--color-text-light); line-height: 1.8; margin-bottom: 40px; max-width: 440px; }
+        .hero-btn { display: inline-block; padding: 14px 40px; background: var(--color-primary); color: var(--color-white); font-family: var(--font-body-en); font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; transition: var(--transition); }
+        .hero-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        .hero-visual { aspect-ratio: 1; overflow: hidden; }
+        .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ABOUT */
+        .about { padding: 120px 0; background: var(--color-bg-white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .about-label { font-family: var(--font-body-en); font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 20px; }
+        .about h2 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--color-primary); margin-bottom: 32px; letter-spacing: -0.5px; text-transform: uppercase; line-height: 1.1; }
+        .about p { font-size: 15px; color: var(--color-text-light); line-height: 2; margin-bottom: 16px; }
+        .about-visual { aspect-ratio: 1; overflow: hidden; }
+        .about-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* PRODUCTS */
+        .products { padding: 120px 0; background: var(--color-bg); }
+        .products-header { margin-bottom: 56px; }
+        .products-header h2 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: var(--color-primary); letter-spacing: -0.5px; text-transform: uppercase; margin-bottom: 8px; }
+        .products-header p { font-size: 14px; color: var(--color-text-muted); letter-spacing: 0.5px; }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .product-card { background: var(--color-bg-white); overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); }
+        .product-card:hover { border-color: var(--color-primary); transform: translateY(-3px); }
+        .product-img { height: 220px; overflow: hidden; background: var(--color-bg-alt); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--color-primary); margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+        .product-info p { font-size: 13px; color: var(--color-text-light); line-height: 1.6; }
+
+        /* FOOTER */
+        .footer { background: var(--color-footer-bg); color: var(--color-white); padding: 48px 0 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-heading); font-size: 14px; font-weight: 800; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 12px; }
+        .footer-text { font-size: 13px; opacity: 0.4; line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { font-family: var(--font-body-en); font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); }
+        .footer-links a:hover { color: var(--color-white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 12px; opacity: 0.3; line-height: 2; }
+        .precraft-badge { display: inline-block; margin-top: 16px; padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15); font-size: 12px; opacity: 0.5; }
+        .precraft-badge a { color: rgba(255,255,255,0.6); }
+
+        @media (max-width: 992px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+            .hero-visual { max-width: 480px; order: -1; }
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-visual { max-width: 480px; order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { min-height: auto; padding: 120px 0 80px; }
+            .products-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .about, .products { padding: 80px 0; }
+            .container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Studio Noir</a>
+            <ul class="nav-links">
+                <li><a href="#">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div>
+                <p class="hero-label">Brand Identity &amp; Strategy</p>
+                <h1 class="hero-tagline">Design<br>speaks for<br>itself.</h1>
+                <p class="hero-desc">我們相信好的作品不需要解釋。Studio Noir 為認真對待品牌的客戶，提供視覺識別與品牌策略。</p>
+                <a href="#" class="hero-btn">View Our Work</a>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/studio-noir/hero-main.png" alt="Studio Noir 品牌視覺：極簡設計工具">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <p class="about-label">About</p>
+                <h2>Less noise.<br>More signal.</h2>
+                <p>Studio Noir 由三位前 4A 廣告公司的創意總監於 2021 年共同創立。我們離開大公司不是因為不喜歡設計，而是因為太喜歡——我們想做真正能幫助品牌成長的設計，而不只是讓提案簡報變漂亮。</p>
+                <p>我們的作品不追求華麗，但每一件都精準地解決了客戶的問題。從科技新創到傳統老店，從 Logo 設計到完整品牌重塑，我們用策略驅動設計，用設計驅動成長。</p>
+                <p>三年，四十多個品牌，零案例是「只做漂亮」的。</p>
+            </div>
+            <div class="about-visual">
+                <img src="assets/studio-noir/about-workspace.png" alt="Studio Noir 工作空間" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <div class="products-header">
+            <h2>Services</h2>
+            <p>我們做的事，和不做的事一樣清楚</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="assets/studio-noir/product-identity.png" alt="品牌識別系統設計" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>Brand Identity</h3>
+                    <p>品牌識別系統設計<br>從策略定位到 Logo、色彩、字型、應用規範。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/studio-noir/product-packaging.png" alt="包裝設計專案" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>Packaging</h3>
+                    <p>包裝設計專案<br>從結構到視覺，含印刷監製與材質建議。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/studio-noir/product-consulting.png" alt="年度品牌顧問服務" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>Consulting</h3>
+                    <p>年度品牌顧問服務<br>每月策略會議，持續優化品牌視覺一致性。</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/studio-noir/product-print.png" alt="印刷品設計" loading="lazy"></div>
+                <div class="product-info">
+                    <h3>Print</h3>
+                    <p>印刷品設計<br>名片、信封、目錄、海報。紙張與工藝的極致。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">Studio Noir</div>
+                <p class="footer-text">Brand Identity &amp; Strategy<br>hello@studionoir.tw</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>此為 Precraft 風格展示用虛擬品牌 &middot; A demo brand by Precraft 緻作</p>
+            <div class="precraft-badge"><a href="../../index.html">查看 Precraft 緻作 &rarr;</a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

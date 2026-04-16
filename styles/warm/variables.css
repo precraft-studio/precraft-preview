@@ -1,0 +1,75 @@
+/* =============================================
+   warm — 溫暖自然風格
+   Design tokens only. No selectors.
+   ============================================= */
+
+:root {
+  /* ===== Colors ===== */
+  --warm-primary: #8B6F47;
+  --warm-primary-hover: #7A6040;
+  --warm-accent: #D2956E;
+  --warm-accent-soft: #8AAA91;
+  --warm-bg: #FAF5ED;
+  --warm-bg-alt: #F5EBDF;
+  --warm-bg-white: #FFFFFF;
+  --warm-bg-card: #FDF9F4;
+  --warm-text: #3E2F24;
+  --warm-text-secondary: #6B5444;
+  --warm-text-tertiary: #A08B78;
+  --warm-border: #E0D4C3;
+  --warm-border-light: #EDE4D8;
+  --warm-white: #FFFFFF;
+  --warm-footer-bg: #2A2018;
+  --warm-footer-text: rgba(255, 255, 255, 0.55);
+  --warm-footer-border: rgba(255, 255, 255, 0.1);
+
+  /* ===== Typography ===== */
+  --warm-font-heading: 'Lora', serif;
+  --warm-font-body: 'Noto Serif TC', 'Source Sans 3', serif;
+  --warm-font-body-en: 'Source Sans 3', 'Inter', sans-serif;
+
+  --warm-font-h1: clamp(36px, 5vw, 56px);
+  --warm-font-h2: clamp(28px, 4vw, 40px);
+  --warm-font-h3: 22px;
+  --warm-font-body-size: 16px;
+  --warm-font-body-lg: 18px;
+  --warm-font-small: 14px;
+  --warm-font-xs: 12px;
+
+  --warm-weight-normal: 400;
+  --warm-weight-medium: 500;
+  --warm-weight-semibold: 600;
+
+  --warm-lh-tight: 1.2;
+  --warm-lh-base: 1.7;
+  --warm-lh-relaxed: 1.9;
+
+  /* ===== Spacing ===== */
+  --warm-space-1: 8px;
+  --warm-space-2: 16px;
+  --warm-space-3: 24px;
+  --warm-space-4: 32px;
+  --warm-space-6: 48px;
+  --warm-space-8: 64px;
+  --warm-space-10: 80px;
+  --warm-section: 100px;
+
+  /* ===== Layout ===== */
+  --warm-container: 1080px;
+  --warm-container-narrow: 700px;
+  --warm-pad: 24px;
+
+  /* ===== Radius ===== */
+  --warm-radius-sm: 8px;
+  --warm-radius-md: 12px;
+  --warm-radius-lg: 20px;
+  --warm-radius-pill: 28px;
+
+  /* ===== Shadows ===== */
+  --warm-shadow-sm: 0 2px 8px rgba(62, 47, 36, 0.06);
+  --warm-shadow-md: 0 4px 16px rgba(62, 47, 36, 0.08);
+  --warm-shadow-hover: 0 8px 24px rgba(139, 111, 71, 0.12);
+
+  /* ===== Transitions ===== */
+  --warm-transition: all 0.3s ease;
+}

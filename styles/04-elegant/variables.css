@@ -1,0 +1,342 @@
+/* =============================================
+   04-elegant — 優雅質感風格
+   適用產業：美妝、醫美、精品、保健品牌
+   萃取來源：BIOXCIN 台灣官網 (2026-04)
+   ============================================= */
+
+:root {
+  /* ===== 顏色系統 — 品牌色 ===== */
+  --color-primary: #8B1A2E;           /* 品牌主色（深酒紅） */
+  --color-primary-dark: #6B1222;      /* 主色加深（hover 用） */
+  --color-primary-light: #A82438;     /* 主色減淡（漸層搭配） */
+  --color-primary-darker: #5C1020;    /* 最深品牌色（漸層中段） */
+  --color-primary-darkest: #4A0C16;   /* 極深（download btn hover 漸層） */
+  --color-accent: #C9A84C;            /* 強調色（金色） — 分隔線、hover、引言裝飾 */
+  --color-danger: #e74c3c;            /* 警示色（紅色） — 強調負面內容用 */
+
+  /* ===== 顏色系統 — 背景色 ===== */
+  --color-bg: #FFFFFF;                /* 主背景色 */
+  --color-bg-alt: #F9F6F0;           /* 替代背景色（奶油色） — 卡片、品牌故事區 */
+  --color-bg-light: #F4F4F4;         /* 淺灰背景色 — 產品區段 */
+  --color-bg-warm: #f8f4f0;          /* 暖灰（品牌故事漸層起點） */
+  --color-bg-warm-light: #faf8f6;    /* 更淡暖灰（品牌故事漸層終點） */
+  --color-bg-disclaimer: #f9f9f9;    /* 聲明區背景 */
+  --color-bg-info: #FFF9E6;          /* 資訊框背景（淡黃色） */
+  --color-white: #FFFFFF;
+
+  /* ===== 顏色系統 — 文字色 ===== */
+  --color-text: #2C2C2C;             /* 主文字色 */
+  --color-text-light: #555555;       /* 次要文字色 */
+  --color-text-muted: #666666;       /* 更淡文字色 — disclaimer、caption */
+  --color-text-heading: #333333;     /* 標題強調色（略淺於主色） */
+  --color-text-body: #000000;        /* 內文正文色（產品詳情頁用） */
+
+  /* ===== 顏色系統 — 邊框與分隔線 ===== */
+  --color-border: #E0E0E0;           /* 主要邊框色 */
+  --color-border-light: #E8E8E8;     /* 淡邊框（臨床卡片） */
+  --color-border-lighter: #F0F0F0;   /* 最淡邊框（產品圖片、行動選單分隔） */
+  --color-border-subtle: #f0f0f0;    /* 細微分隔線 */
+
+  /* ===== 顏色系統 — 頁尾 ===== */
+  --color-footer-bg: #3D0A14;        /* 頁尾深色背景 */
+  --color-footer-text: rgba(255, 255, 255, 0.8);    /* 頁尾文字 */
+  --color-footer-border: rgba(255, 255, 255, 0.1);  /* 頁尾分隔線 */
+
+  /* ===== 顏色系統 — 漸層預設 ===== */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  --gradient-hero-overlay: linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.1) 100%);
+  --gradient-page-header: linear-gradient(135deg, #8B1A2E 0%, #5C1020 50%, #3D0A14 100%);
+  --gradient-brand-story-bg: linear-gradient(135deg, var(--color-bg-warm) 0%, var(--color-bg-warm-light) 100%);
+
+  /* ===== 字型系統 ===== */
+  --font-heading: 'Playfair Display', serif;    /* 標題字型（襯線體，優雅感） */
+  --font-body: 'Noto Sans TC', sans-serif;      /* 內文字型（無襯線，易讀） */
+
+  /* 字型大小 — Desktop */
+  --font-size-base: 16px;
+  --font-size-xs: 10px;              /* logo-company */
+  --font-size-sm: 11px;              /* logo-subtitle */
+  --font-size-small: 14px;           /* nav links、caption、小字 */
+  --font-size-body: 15px;            /* 段落內文 */
+  --font-size-body-lg: 17px;         /* 大段落（FAQ、產品描述） */
+  --font-size-h6: 13px;              /* disclaimer、極小標籤 */
+  --font-size-h5: 16px;              /* 價值卡片標題 */
+  --font-size-h4: 20px;              /* 特色標題、FAQ 標題 */
+  --font-size-h3: 28px;              /* 卡片標題、footer 品牌名 */
+  --font-size-h2: 42px;              /* section 標題 */
+  --font-size-h1: 56px;              /* hero 主標題 */
+  --font-size-display: 52px;         /* 臨床數據大數字 */
+  --font-size-stat: 42px;            /* stats banner 數字 */
+
+  /* 字型粗細 */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* 行高 */
+  --line-height-tight: 1.2;          /* 標題 */
+  --line-height-base: 1.6;           /* 一般文字 */
+  --line-height-relaxed: 1.7;        /* 寬鬆段落（FAQ 答案） */
+  --line-height-loose: 1.8;          /* 最寬鬆（品牌介紹段落、引言） */
+  --line-height-double: 2.0;         /* 品牌故事引言 */
+
+  /* 字間距 */
+  --letter-spacing-sm: 1px;          /* logo subtitle */
+  --letter-spacing-md: 1.5px;        /* logo company */
+
+  /* ===== 間距系統 ===== */
+  --spacing-2xs: 0.25rem;  /*  4px */
+  --spacing-xs: 0.5rem;    /*  8px */
+  --spacing-sm: 1rem;      /* 16px */
+  --spacing-md: 1.25rem;   /* 20px — nav padding、card padding */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 2.5rem;   /* 40px — card inner padding */
+  --spacing-3xl: 3rem;     /* 48px */
+  --spacing-4xl: 3.75rem;  /* 60px — footer padding、grid gap */
+  --spacing-section: 5rem;  /* 80px — section padding */
+
+  /* Grid gaps */
+  --gap-sm: 10px;
+  --gap-md: 20px;
+  --gap-lg: 30px;
+  --gap-xl: 50px;
+  --gap-2xl: 60px;
+
+  /* ===== 圓角系統 ===== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;                  /* FAQ item、btn-detail */
+  --radius-md: 10px;                 /* 聯絡方塊、feature item */
+  --radius-lg: 12px;                 /* 產品卡片、stat 卡片、品牌卡片 */
+  --radius-xl: 16px;                 /* 引言卡片 */
+  --radius-pill: 25px;               /* 膠囊按鈕 (btn-shop) */
+  --radius-pill-lg: 30px;            /* 膠囊按鈕 (hero btn) */
+  --radius-full: 50px;               /* 圓形 badge、完全膠囊 */
+  --radius-circle: 50%;              /* 圓形元素 */
+
+  /* ===== 陰影系統 ===== */
+  --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.05);                /* 基礎卡片 */
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.06);               /* 品牌故事價值卡 */
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);               /* 標準卡片 */
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);               /* 引言卡片 */
+  --shadow-xl: 0 5px 20px rgba(0, 0, 0, 0.1);                /* 手機選單 */
+  --shadow-navbar: 0 2px 10px rgba(0, 0, 0, 0.1);            /* 導航列 */
+  --shadow-hover: 0 8px 25px rgba(139, 26, 46, 0.15);        /* hover 帶品牌色 */
+  --shadow-hover-strong: 0 8px 25px rgba(139, 26, 46, 0.12); /* 品牌故事 hover */
+  --shadow-cta: 0 6px 20px rgba(139, 26, 46, 0.3);           /* CTA 按鈕 hover */
+  --shadow-focus: 0 0 0 3px rgba(139, 26, 46, 0.2);          /* focus ring */
+
+  /* ===== 版面系統 ===== */
+  --container-max-width: 1200px;
+  --container-max-width-lg: 1320px;   /* 大螢幕 (>1400px) */
+  --container-padding: 20px;
+  --container-padding-sm: 15px;       /* 手機 (<480px) */
+
+  /* ===== 過渡動畫 ===== */
+  --transition: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+  --transition-slow: all 0.6s ease;   /* fade-in 動畫 */
+
+  /* ===== 斷點參考（CSS 變數不支援 @media，此處僅做文件記錄） ===== */
+  /* --bp-mobile-sm: 480px;   小手機 */
+  /* --bp-mobile: 768px;      手機/平板分界 */
+  /* --bp-tablet: 992px;      平板/桌面分界 */
+  /* --bp-tablet-landscape: 1024px; 平板橫向 */
+  /* --bp-desktop-lg: 1400px; 大螢幕 */
+
+  /* ===== Z-Index 層級 ===== */
+  --z-back-to-top: 999;
+  --z-nav-menu: 999;
+  --z-navbar: 1000;
+}
+
+/* ===== 基礎重置（風格附帶） ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  overflow-x: hidden;
+  background: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ===== 共用元件樣式 ===== */
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--gap-2xl);
+}
+
+.section-title h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-text);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--color-primary);
+}
+
+.section-title p {
+  color: var(--color-text-light);
+  font-size: 18px;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 32px;
+  border-radius: var(--radius-pill-lg);
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-cta:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-cta);
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: var(--z-back-to-top);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-5px);
+}
+
+/* ===== RWD 斷點共用調整 ===== */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .section-title p {
+    font-size: var(--font-size-body);
+  }
+
+  .container {
+    padding: 0 var(--container-padding);
+  }
+
+  section {
+    padding: 50px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 12px 20px;
+    font-size: var(--font-size-small);
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-sm);
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: var(--container-max-width-lg);
+  }
+}

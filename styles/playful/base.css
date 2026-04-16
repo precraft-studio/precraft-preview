@@ -1,0 +1,93 @@
+/* =============================================
+   playful — Base styles
+   Reset + typography + shared components
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--playful-font-body);
+  font-size: var(--playful-font-body-size);
+  color: var(--playful-text);
+  line-height: var(--playful-lh-base);
+  background: var(--playful-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--playful-font-heading);
+  font-weight: var(--playful-weight-semibold);
+  line-height: var(--playful-lh-tight);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+.p-container {
+  max-width: var(--playful-container);
+  margin: 0 auto;
+  padding: 0 var(--playful-pad);
+}
+
+.p-label {
+  font-family: var(--playful-font-body-en);
+  font-size: var(--playful-font-xs);
+  font-weight: var(--playful-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--playful-secondary);
+  margin-bottom: var(--playful-space-2);
+}
+
+/* Buttons — rounded pill style */
+.p-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--playful-font-heading);
+  font-size: var(--playful-font-small);
+  font-weight: var(--playful-weight-semibold);
+  border-radius: var(--playful-radius-pill);
+  transition: var(--playful-transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.p-btn-primary {
+  background: var(--playful-primary);
+  color: var(--playful-white);
+  border-color: var(--playful-primary);
+}
+.p-btn-primary:hover {
+  background: var(--playful-primary-hover);
+  border-color: var(--playful-primary-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--playful-shadow-hover);
+}
+
+.p-btn-secondary {
+  background: var(--playful-secondary);
+  color: var(--playful-white);
+  border-color: var(--playful-secondary);
+}
+.p-btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--playful-shadow-warm);
+}
+
+.p-btn-outline {
+  background: transparent;
+  color: var(--playful-primary);
+  border-color: var(--playful-border);
+}
+.p-btn-outline:hover {
+  border-color: var(--playful-primary);
+  background: var(--playful-bg-subtle);
+}

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元億財稅記帳士事務所 — 讓專業，成為您事業的基石</title>
+    <meta name="description" content="元億財稅記帳士事務所，1999 年成立。提供工商登記、帳務處理、稅務諮詢，全方位協助中小企業穩健成長。500+ 合作夥伴信賴。">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           元億財稅 — minimal 基底 + editorial 局部 + ytax 專案色
+           ============================================= */
+
+        :root {
+            /* minimal 基底色 */
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8FAFC;
+            --text-primary: #0F172A;
+            --text-secondary: #64748B;
+            --text-tertiary: #94A3B8;
+            --border: #E2E8F0;
+
+            /* ytax 專案色 */
+            --ytax-accent: #047857;
+            --ytax-accent-hover: #065F46;
+            --ytax-gold: #B8860B;
+            --ytax-dark: #0F172A;
+
+            /* Typography */
+            --font-sans: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Noto Serif TC', Georgia, serif;
+
+            /* Spacing */
+            --container-max: 1280px;
+            --section-lg: 120px;
+            --section-md: 80px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== 1. NAVIGATION ===== */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-primary);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .nav.scrolled {
+            border-bottom-color: var(--border);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-logo-mark {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+        }
+        .nav-logo-text {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .nav-logo-main {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--ytax-dark);
+            letter-spacing: 0.02em;
+        }
+        .nav-logo-sub {
+            font-size: 12px;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+        .nav-menu a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1.5px;
+            background: var(--ytax-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        .nav-menu a:hover { color: var(--ytax-dark); }
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after { transform: scaleX(1); }
+        .nav-menu a.active { color: var(--ytax-dark); }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 4px;
+        }
+        .menu-toggle span {
+            width: 22px;
+            height: 1.5px;
+            background: var(--ytax-dark);
+        }
+
+
+        /* ===== 2. HERO ===== */
+        .hero {
+            min-height: 100vh;
+            min-height: max(100vh, 720px);
+            display: flex;
+            align-items: center;
+            background: var(--ytax-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/hero.png') center/cover no-repeat;
+            opacity: 0.4;
+            mix-blend-mode: luminosity;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15,23,42,0.5) 0%, rgba(15,23,42,0.85) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            padding: 120px 0 60px;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ytax-gold);
+            letter-spacing: 0.1em;
+            text-transform: none;
+            margin-bottom: 32px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--ytax-gold);
+        }
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+        .hero-sub {
+            font-size: clamp(16px, 1.5vw, 18px);
+            font-weight: 400;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            margin-bottom: 48px;
+            max-width: 580px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1.5px solid transparent;
+            font-family: var(--font-sans);
+        }
+        .btn-primary {
+            background: var(--ytax-accent);
+            color: #FFFFFF;
+            border-color: var(--ytax-accent);
+        }
+        .btn-primary:hover {
+            background: var(--ytax-accent-hover);
+            border-color: var(--ytax-accent-hover);
+            transform: translateY(-1px);
+        }
+        .btn-outline-light {
+            background: transparent;
+            color: #FFFFFF;
+            border-color: rgba(255,255,255,0.4);
+        }
+        .btn-outline-light:hover {
+            border-color: #FFFFFF;
+            background: rgba(255,255,255,0.06);
+        }
+        .btn-outline-dark {
+            background: transparent;
+            color: var(--ytax-dark);
+            border-color: var(--border);
+        }
+        .btn-outline-dark:hover {
+            border-color: var(--ytax-dark);
+        }
+
+
+        /* ===== 3. STATS ===== */
+        .stats {
+            background: var(--bg-primary);
+            padding: 100px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .stat {
+            padding: 0 48px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+        .stat:last-child { border-right: none; }
+        .stat-number {
+            font-size: clamp(60px, 8vw, 96px);
+            font-weight: 300;
+            color: var(--ytax-gold);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin-bottom: 20px;
+        }
+        .stat-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--ytax-dark);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+        .stat-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+
+        /* ===== 4. SERVICES ===== */
+        .services {
+            background: var(--bg-secondary);
+            padding: var(--section-lg) 0;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 80px;
+        }
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ytax-accent);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 600;
+            color: var(--ytax-dark);
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .section-header p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .service-block {
+            background: var(--bg-primary);
+            padding: 56px 48px;
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ytax-accent);
+            margin-bottom: 28px;
+        }
+        .service-block h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--ytax-dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        .service-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        .service-list li {
+            font-size: 15px;
+            color: var(--text-primary);
+            padding: 10px 0 10px 20px;
+            position: relative;
+        }
+        .service-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--ytax-accent);
+        }
+
+        /* editorial 局部：細節說明區用 serif + 引文樣式 */
+        .service-quote {
+            font-family: var(--font-serif);
+            font-size: 17px;
+            font-style: normal;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            border-left: 3px solid var(--ytax-gold);
+            padding: 4px 0 4px 20px;
+            margin-top: 32px;
+        }
+
+
+        /* ===== 5. WHY US ===== */
+        .why {
+            background: var(--bg-primary);
+            padding: var(--section-lg) 0;
+        }
+        .why-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .why-visual {
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: var(--bg-secondary);
+        }
+        .why-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .why-content .section-eyebrow { margin-bottom: 16px; }
+        .why-content h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 600;
+            color: var(--ytax-dark);
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+            line-height: 1.2;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .why-card {
+            padding: 28px 24px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: border-color 0.25s ease;
+        }
+        .why-card:hover {
+            border-color: var(--ytax-accent);
+        }
+        .why-icon {
+            width: 32px;
+            height: 32px;
+            color: var(--ytax-accent);
+            margin-bottom: 16px;
+        }
+        .why-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ytax-dark);
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+
+        /* ===== 6. CTA ===== */
+        .cta {
+            background: var(--ytax-dark);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/trust.png') center/cover no-repeat;
+            opacity: 0.3;
+            mix-blend-mode: luminosity;
+        }
+        .cta-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.9) 100%);
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .cta h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .cta-sub {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 48px;
+        }
+        .cta-info {
+            display: flex;
+            gap: 48px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        .cta-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+        }
+        .cta-info-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--ytax-accent);
+            flex-shrink: 0;
+        }
+
+
+        /* ===== 7. FOOTER ===== */
+        .footer {
+            background: var(--ytax-dark);
+            padding: 80px 0 32px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 56px;
+        }
+        .footer-brand-mark {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .footer-brand-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+        }
+        .footer-brand-sub {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        .footer-brand-desc {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.8;
+        }
+        .footer h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #FFFFFF;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 12px; }
+        .footer a, .footer-info-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+            transition: color 0.2s ease;
+        }
+        .footer a:hover { color: var(--ytax-accent); }
+        .footer-info-text { display: block; }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-bottom a {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            :root { --section-lg: 96px; }
+            .why-layout { grid-template-columns: 1fr; gap: 56px; }
+            .why-visual { max-width: 480px; margin: 0 auto; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --section-lg: 80px; --section-md: 56px; }
+            .container { padding: 0 24px; }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 48px;
+                gap: 0;
+                transition: left 0.3s ease;
+                border-top: 1px solid var(--border);
+            }
+            .nav-menu.active { left: 0; }
+            .nav-menu li { width: 100%; }
+            .nav-menu a {
+                display: block;
+                padding: 18px 0;
+                font-size: 16px;
+                border-bottom: 1px solid var(--border);
+            }
+            .menu-toggle { display: flex; }
+
+            .hero { min-height: auto; padding: 80px 0; }
+            .hero-content { padding: 80px 0 40px; }
+            .hero-actions { flex-direction: column; align-items: stretch; }
+            .btn { justify-content: center; }
+
+            .stats { padding: 64px 0; }
+            .stats-grid { grid-template-columns: 1fr; gap: 0; }
+            .stat {
+                padding: 40px 0;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .stat:last-child { border-bottom: none; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .service-block { padding: 40px 28px; }
+
+            .why-grid { grid-template-columns: 1fr; }
+
+            .cta { padding: 72px 0; }
+            .cta-info { flex-direction: column; align-items: center; gap: 16px; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- ===== 1. NAVIGATION ===== -->
+<nav class="nav" id="nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <svg class="nav-logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="50,12 90,35 50,58 10,35" fill="#5FBB46"/>
+                    <polygon points="10,35 50,58 50,95 10,72" fill="#1E3A5F"/>
+                    <polygon points="90,35 50,58 50,95 90,72" fill="#3B6FB8"/>
+                </svg>
+                <span class="nav-logo-text">
+                    <span class="nav-logo-main">元億</span>
+                    <span class="nav-logo-sub">財稅記帳士事務所</span>
+                </span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="選單">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="active">首頁</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#services">服務項目</a></li>
+                <li><a href="#why">客戶群</a></li>
+                <li><a href="#contact">聯繫我們</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ===== 2. HERO ===== -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-eyebrow">25 年專業 · 合格證照 · 500+ 合作夥伴</p>
+            <h1>讓專業，<br>成為您事業的基石</h1>
+            <p class="hero-sub">元億財稅記帳士事務所，1999 年成立。提供工商登記、帳務處理、稅務諮詢，全方位協助中小企業穩健成長。</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    立即諮詢
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#services" class="btn btn-outline-light">了解服務</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 3. STATS ===== -->
+<section class="stats" id="about">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">25<sup style="font-size:0.5em;">+</sup></div>
+                <div class="stat-title">年專業經驗</div>
+                <div class="stat-desc">自 1999 年深耕財稅領域</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500<sup style="font-size:0.5em;">+</sup></div>
+                <div class="stat-title">合作夥伴</div>
+                <div class="stat-desc">涵蓋買賣、製造、服務業等</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">001554</div>
+                <div class="stat-title">(101) 專普帳字第號</div>
+                <div class="stat-desc">考試院合格專技證照</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 4. SERVICES ===== -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-eyebrow">完整服務</p>
+            <h2>一站式解決您的<br>帳務與登記需求</h2>
+            <p>從公司成立到日常營運，讓專業團隊協助您每一個關鍵環節。</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- 工商登記 -->
+            <div class="service-block">
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>
+                </div>
+                <h3>工商登記</h3>
+                <ul class="service-list">
+                    <li>公司設立登記</li>
+                    <li>公司變更登記</li>
+                    <li>工廠登記</li>
+                    <li>特許行業登記</li>
+                </ul>
+                <p class="service-quote">成立至今辦理數千件工商登記，包括藥商、室內裝修、不動產仲介、營造業等，作業迅速、專業把關。</p>
+            </div>
+
+            <!-- 帳務處理 -->
+            <div class="service-block">
+                <div class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+                </div>
+                <h3>帳務處理</h3>
+                <ul class="service-list">
+                    <li>代理客戶記帳</li>
+                    <li>營業稅申報</li>
+                    <li>營業所得稅申報</li>
+                    <li>各類所得扣繳申報</li>
+                    <li>其他稅務申報</li>
+                </ul>
+                <p class="service-quote">全面電腦化作業，網路報繳稅，服務涵蓋買賣、製造、服務、工程、診所、幼稚園、補習班等多元產業。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 5. WHY US ===== -->
+<section class="why" id="why">
+    <div class="container">
+        <div class="why-layout">
+            <div class="why-visual">
+                <img src="images/service.png" alt="元億財稅事務所工作環境" loading="lazy">
+            </div>
+            <div class="why-content">
+                <p class="section-eyebrow">我們的承諾</p>
+                <h2>為什麼選擇元億</h2>
+
+                <div class="why-grid">
+                    <div class="why-card">
+                        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <h4>合法專業證照</h4>
+                        <p>考試院普考合格<br>專普帳字第 001554 號</p>
+                    </div>
+                    <div class="why-card">
+                        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <h4>超過 25 年經驗</h4>
+                        <p>自 1999 年深耕<br>熟悉各產業帳務需求</p>
+                    </div>
+                    <div class="why-card">
+                        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 17a4 4 0 0 1-8 0V7a4 4 0 1 1 8 0v10z"/><path d="M21 17a4 4 0 0 1-8 0V7a4 4 0 1 1 8 0v10z"/><line x1="11" y1="12" x2="13" y2="12"/></svg>
+                        <h4>500+ 客戶信任</h4>
+                        <p>涵蓋多元產業<br>建立長期合作關係</p>
+                    </div>
+                    <div class="why-card">
+                        <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <h4>免費到府收送</h4>
+                        <p>台北、新北、桃園<br>省您寶貴時間</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 6. CTA ===== -->
+<section class="cta" id="contact">
+    <div class="cta-bg"></div>
+    <div class="container">
+        <div class="cta-content">
+            <h2>準備讓專業<br>成為您的助力？</h2>
+            <p class="cta-sub">免費諮詢 · 專業評估 · 量身方案</p>
+
+            <div class="cta-info">
+                <div class="cta-info-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>(02) 8221-5111</span>
+                </div>
+                <div class="cta-info-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>sales@ytax.com.tw</span>
+                </div>
+                <div class="cta-info-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>新北市中和區中正路 515 號 3 樓之 6</span>
+                </div>
+            </div>
+
+            <a href="tel:0282215111" class="btn btn-primary">
+                立即聯繫我們
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 7. FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <svg class="footer-brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="50,12 90,35 50,58 10,35" fill="#5FBB46"/>
+                    <polygon points="10,35 50,58 50,95 10,72" fill="#1E3A5F"/>
+                    <polygon points="90,35 50,58 50,95 90,72" fill="#3B6FB8"/>
+                </svg>
+                <div class="footer-brand-name">元億</div>
+                <div class="footer-brand-sub">財稅記帳士事務所</div>
+                <p class="footer-brand-desc">1999 年成立<br>值得信賴的財稅夥伴</p>
+            </div>
+            <div>
+                <h4>服務項目</h4>
+                <ul>
+                    <li><a href="#services">工商登記</a></li>
+                    <li><a href="#services">帳務處理</a></li>
+                    <li><a href="#services">稅務諮詢</a></li>
+                    <li><a href="#contact">客戶支援</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>網站導覽</h4>
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#about">關於我們</a></li>
+                    <li><a href="#services">服務項目</a></li>
+                    <li><a href="#why">客戶群</a></li>
+                    <li><a href="#contact">聯繫我們</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>聯絡資訊</h4>
+                <span class="footer-info-text">(02) 8221-5111</span>
+                <span class="footer-info-text">sales@ytax.com.tw</span>
+                <span class="footer-info-text">新北市中和區中正路</span>
+                <span class="footer-info-text">515 號 3 樓之 6</span>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 元億財稅記帳士事務所 Ytax Accounting Consulting</p>
+            <a href="#">隱私政策</a>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    // Sticky nav shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('active'));
+    }
+    document.querySelectorAll('.nav-menu a').forEach(a => {
+        a.addEventListener('click', () => menu.classList.remove('active'));
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

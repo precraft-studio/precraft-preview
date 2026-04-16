@@ -1,0 +1,80 @@
+/* =============================================
+   editorial — 文青雜誌風格
+   Design tokens only. No selectors.
+   ============================================= */
+
+:root {
+  /* ===== Colors ===== */
+  --editorial-primary: #1A1A1A;
+  --editorial-primary-hover: #333333;
+  --editorial-accent: #A82D2D;
+  --editorial-accent-hover: #8C2424;
+  --editorial-bg: #FAF7F0;
+  --editorial-bg-white: #FFFFFF;
+  --editorial-bg-alt: #F3EFE6;
+  --editorial-text: #1A1A1A;
+  --editorial-text-secondary: #5A5A5A;
+  --editorial-text-tertiary: #8A8A8A;
+  --editorial-border: #2A2A2A;
+  --editorial-border-light: #D8D2C6;
+  --editorial-border-hairline: #E8E3D9;
+  --editorial-white: #FFFFFF;
+  --editorial-footer-bg: #1A1A1A;
+  --editorial-footer-text: rgba(255, 255, 255, 0.45);
+
+  /* ===== Typography ===== */
+  --editorial-font-display: 'Playfair Display', serif;
+  --editorial-font-heading: 'Crimson Text', 'Lora', serif;
+  --editorial-font-body: 'Noto Serif TC', 'Crimson Text', serif;
+  --editorial-font-sans: 'Noto Sans TC', 'Inter', sans-serif;
+  --editorial-font-label: 'Inter', sans-serif;
+
+  --editorial-font-h1: clamp(48px, 7vw, 96px);
+  --editorial-font-h2: clamp(32px, 5vw, 52px);
+  --editorial-font-h3: 24px;
+  --editorial-font-body-size: 17px;
+  --editorial-font-body-lg: 20px;
+  --editorial-font-small: 14px;
+  --editorial-font-xs: 11px;
+  --editorial-font-caption: 13px;
+
+  --editorial-weight-normal: 400;
+  --editorial-weight-medium: 500;
+  --editorial-weight-semibold: 600;
+  --editorial-weight-bold: 700;
+  --editorial-weight-black: 900;
+
+  --editorial-lh-display: 1.0;
+  --editorial-lh-tight: 1.15;
+  --editorial-lh-base: 1.75;
+  --editorial-lh-relaxed: 1.9;
+
+  --editorial-letter-tight: -0.02em;
+  --editorial-letter-wide: 0.12em;
+
+  /* ===== Spacing ===== */
+  --editorial-space-1: 8px;
+  --editorial-space-2: 16px;
+  --editorial-space-3: 24px;
+  --editorial-space-4: 32px;
+  --editorial-space-6: 48px;
+  --editorial-space-8: 64px;
+  --editorial-space-10: 80px;
+  --editorial-section: 120px;
+
+  /* ===== Layout ===== */
+  --editorial-container: 1080px;
+  --editorial-container-narrow: 660px;
+  --editorial-container-wide: 1200px;
+  --editorial-pad: 24px;
+
+  /* ===== Radius ===== */
+  --editorial-radius: 0px;
+  --editorial-radius-sm: 2px;
+
+  /* ===== Shadows ===== */
+  --editorial-shadow-sm: 0 1px 3px rgba(26, 26, 26, 0.04);
+
+  /* ===== Transitions ===== */
+  --editorial-transition: all 0.25s ease;
+}
