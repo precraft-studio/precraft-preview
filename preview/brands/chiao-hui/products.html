@@ -58,9 +58,13 @@ a { text-decoration: none; color: inherit; }
 .sg-header { margin-bottom: 48px; }
 .sg-header h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 36px); font-weight: 600; color: var(--text); margin-bottom: 8px; }
 .sg-header p { font-size: 15px; color: var(--text-light); }
-.sg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.sg-card { padding: 32px; background: var(--bg-alt); border-radius: var(--radius); transition: var(--transition); }
-.sg-card:hover { box-shadow: 0 4px 16px rgba(139,77,107,0.08); }
+.sg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.sg-card { background: var(--bg-alt); border-radius: var(--radius); transition: var(--transition); overflow: hidden; display: flex; flex-direction: column; }
+.sg-card:hover { box-shadow: 0 6px 24px rgba(139,77,107,0.12); transform: translateY(-2px); }
+.sg-card-img { aspect-ratio: 4/3; overflow: hidden; background: var(--bg-warm); }
+.sg-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.sg-card:hover .sg-card-img img { transform: scale(1.05); }
+.sg-card-body { padding: 28px 32px 32px; }
 .sg-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
 .sg-card p { font-size: 15px; color: var(--text-light); line-height: 1.8; }
 
@@ -128,20 +132,32 @@ a { text-decoration: none; color: inherit; }
         </div>
         <div class="sg-grid">
             <div class="sg-card">
-                <h3>女士剪髮</h3>
-                <p>根據你的臉型、髮質和日常造型習慣，量身設計適合的長度與層次。包含洗髮、剪髮、造型吹整。</p>
+                <div class="sg-card-img"><img src="images/service-01.jpg" alt="女士剪髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>女士剪髮</h3>
+                    <p>根據你的臉型、髮質和日常造型習慣，量身設計適合的長度與層次。包含洗髮、剪髮、造型吹整。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>男士剪髮</h3>
-                <p>俐落有型，快速不等待。從商務正式到休閒個性，找到最適合你的風格。包含洗髮、剪髮。</p>
+                <div class="sg-card-img"><img src="images/service-02.jpg" alt="男士剪髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>男士剪髮</h3>
+                    <p>俐落有型，快速不等待。從商務正式到休閒個性，找到最適合你的風格。包含洗髮、剪髮。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>兒童剪髮</h3>
-                <p>溫柔有耐心，讓小朋友不害怕剪頭髮。輕鬆愉快的氛圍，爸媽也能放心坐在旁邊。</p>
+                <div class="sg-card-img"><img src="images/service-03.jpg" alt="兒童剪髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>兒童剪髮</h3>
+                    <p>溫柔有耐心，讓小朋友不害怕剪頭髮。輕鬆愉快的氛圍，爸媽也能放心坐在旁邊。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>洗髮</h3>
-                <p>不只是清潔，更是一段放鬆的時光。搭配頭皮按摩，舒緩一天的疲勞。</p>
+                <div class="sg-card-img"><img src="images/service-04.jpg" alt="洗髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>洗髮</h3>
+                    <p>不只是清潔，更是一段放鬆的時光。搭配頭皮按摩，舒緩一天的疲勞。</p>
+                </div>
             </div>
         </div>
     </div>
@@ -155,20 +171,32 @@ a { text-decoration: none; color: inherit; }
         </div>
         <div class="sg-grid">
             <div class="sg-card">
-                <h3>燙髮</h3>
-                <p>冷燙、溫塑燙、離子燙，依據你的髮質和期望效果，選擇最合適的方式。包含護髮後處理。</p>
+                <div class="sg-card-img"><img src="images/service-05.jpg" alt="燙髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>燙髮</h3>
+                    <p>冷燙、溫塑燙、離子燙，依據你的髮質和期望效果，選擇最合適的方式。包含護髮後處理。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>染髮</h3>
-                <p>全染、挑染、補染，使用低氨溫和配方。提供專業色彩建議，讓膚色更顯亮。</p>
+                <div class="sg-card-img"><img src="images/service-06.jpg" alt="染髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>染髮</h3>
+                    <p>全染、挑染、補染，使用低氨溫和配方。提供專業色彩建議，讓膚色更顯亮。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>護髮</h3>
-                <p>深層修護、角蛋白護理、髮膜保養。針對受損髮質，恢復柔順光澤。</p>
+                <div class="sg-card-img"><img src="images/service-07.jpg" alt="護髮" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>護髮</h3>
+                    <p>深層修護、角蛋白護理、髮膜保養。針對受損髮質，恢復柔順光澤。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>頭皮護理</h3>
-                <p>專業頭皮檢測與清潔護理，改善出油、乾癢、敏感等問題。健康的頭皮是好髮質的基礎。</p>
+                <div class="sg-card-img"><img src="images/service-08.jpg" alt="頭皮護理" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>頭皮護理</h3>
+                    <p>專業頭皮檢測與清潔護理，改善出油、乾癢、敏感等問題。健康的頭皮是好髮質的基礎。</p>
+                </div>
             </div>
         </div>
     </div>
@@ -182,12 +210,18 @@ a { text-decoration: none; color: inherit; }
         </div>
         <div class="sg-grid">
             <div class="sg-card">
-                <h3>新娘造型</h3>
-                <p>從婚前試妝到當天造型，全程細心打理。包含髮型設計、飾品搭配建議，讓你在最重要的日子閃耀。</p>
+                <div class="sg-card-img"><img src="images/service-09.jpg" alt="新娘造型" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>新娘造型</h3>
+                    <p>從婚前試妝到當天造型，全程細心打理。包含髮型設計、飾品搭配建議，讓你在最重要的日子閃耀。</p>
+                </div>
             </div>
             <div class="sg-card">
-                <h3>宴會 / 特殊場合</h3>
-                <p>尾牙、聚會、畢業典禮、重要面試⋯⋯任何需要好好打扮的日子，我們都能為你準備。</p>
+                <div class="sg-card-img"><img src="images/service-10.jpg" alt="宴會 / 特殊場合" loading="lazy"></div>
+                <div class="sg-card-body">
+                    <h3>宴會 / 特殊場合</h3>
+                    <p>尾牙、聚會、畢業典禮、重要面試⋯⋯任何需要好好打扮的日子，我們都能為你準備。</p>
+                </div>
             </div>
         </div>
     </div>
